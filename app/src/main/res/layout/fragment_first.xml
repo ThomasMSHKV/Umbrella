@@ -5,8 +5,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_w"
-    tools:context=".FirstFragment">
+    android:background="#FFFFFF"
+    tools:context=".fragments.FirstFragment">
+
+    <Button
+        android:id="@+id/info_bt"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/info_bt"
+        android:layout_marginStart="50dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="465dp"
+        android:layout_height="316dp"
+        android:layout_marginTop="18dp"
+        android:padding="30dp"
+        android:src="@drawable/phon_for_temp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/umbrella_text"
@@ -24,10 +45,10 @@
         android:id="@+id/temp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="55dp"
         android:fontFamily="sans-serif-thin"
         android:text="29°C"
-        android:textColor="@android:color/white"
+        android:textColor="#FFFFFF"
         android:textSize="55dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,6 +66,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/temp"
         tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/description_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Clear sky"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="18dp"
+        android:fontFamily="serif"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/address"
+        tools:ignore="MissingConstraints" />
+
 
     <LinearLayout
         android:id="@+id/detailsContainer"
@@ -313,6 +349,23 @@
         </LinearLayout>
 
     </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/errorText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        android:text="Something went wrong"
+        tools:ignore="MissingConstraints" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

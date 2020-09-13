@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">Umbrella</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="name">Your name...</string>
-    <string name="last_name">Your last name...</string>
+    <string name="name">Username</string>
+    <string name="last_name">Last name</string>
 </resources>

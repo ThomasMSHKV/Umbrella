@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.InfoFragment">
+    
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/sun_anim"
+        android:layout_gravity="center"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        app:lottie_rawRes="@raw/simple_sun"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="false"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Разработчики"
+        android:textSize="20dp"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:layout_marginStart="40dp"
+        android:layout_marginEnd="40dp"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#363537"
+        android:text="Thomas Mereshkov"
+        android:textSize="18dp"
+        android:fontFamily="sans-serif-condensed-light"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#363537"
+        android:text="Michael Chanov"
+        android:textSize="18dp"
+        android:fontFamily="sans-serif-condensed-light"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Свои жалобы и предпочтения вы можете отправить"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="5dp"
+        android:textSize="16dp"
+        android:gravity="center"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="#363537"
+        android:text="tmereshkov@gmail.com"
+        android:textSize="18dp"
+        android:fontFamily="sans-serif-condensed-light"/>
+
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>

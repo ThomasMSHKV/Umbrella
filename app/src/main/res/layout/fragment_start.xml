@@ -24,7 +24,11 @@
     <TextView
         android:layout_width="270dp"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
+        android:text="Umbrella"
+=======
         android:text="@string/umbrella"
+>>>>>>> face2f5c80324db6055c001b516c4f36747281fe
         android:textColor="@android:color/darker_gray"
         android:textSize="60dp"
         android:layout_marginTop="300dp"

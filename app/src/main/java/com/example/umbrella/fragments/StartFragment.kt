@@ -29,7 +29,6 @@ class StartFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val navigationFragment = NavigationFragment()
 
 
 

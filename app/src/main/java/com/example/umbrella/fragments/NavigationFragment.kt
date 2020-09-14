@@ -1,8 +1,11 @@
 package com.example.umbrella.fragments
 
+import android.animation.ObjectAnimator
+import android.animation.ValueAnimator
 import android.media.MediaPlayer
 import android.media.SoundPool
 import android.os.Bundle
+import android.os.Handler
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -31,14 +34,18 @@ class NavigationFragment : Fragment() {
 
 
         button_register.setOnClickListener {
-            mediaPlayer?.start()
+            val objectAnimator= ObjectAnimator.ofFloat(it,"translationY",700f)
+            objectAnimator.duration = 2000
+            objectAnimator.start()
+            Handler().postDelayed({mediaPlayer?.start()},1000)
             navigationFragment.arguments=Bundle().also {
                 it.putInt("key",1)
                 Toast.makeText(activity, "Welcome, $nameEditText $lastnameEditText",Toast.LENGTH_LONG).show()
             }
-            fragmentManager?.beginTransaction()
+            Handler().postDelayed({fragmentManager?.beginTransaction()
                 ?.replace(R.id.fragmentContainer,FirstFragment())
-                ?.commit()
+                ?.commit()},1000)
+
         }
 
     }

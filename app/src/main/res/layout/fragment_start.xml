@@ -23,11 +23,11 @@
 
     <TextView
         android:layout_width="270dp"
-        android:layout_height="200dp"
+        android:layout_height="wrap_content"
         android:text="Umbrella"
         android:textColor="@android:color/darker_gray"
         android:textSize="60dp"
-        android:layout_marginTop="400dp"
+        android:layout_marginTop="300dp"
         android:fontFamily="serif"
         app:layout_constraintTop_toBottomOf="@id/loading_um"
         app:layout_constraintStart_toStartOf="parent"

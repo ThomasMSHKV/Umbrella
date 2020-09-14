@@ -365,7 +365,7 @@
         android:layout_centerInParent="true"
         android:visibility="gone"
         android:text="Something went wrong"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

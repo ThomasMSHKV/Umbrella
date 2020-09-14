@@ -3,4 +3,5 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="name">Username</string>
     <string name="last_name">Last name</string>
+    <string name="umbrella">Umbrella</string>
 </resources>

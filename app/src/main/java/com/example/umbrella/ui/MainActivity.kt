@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.umbrella.R
 import com.example.umbrella.fragments.NavigationFragment
+import com.example.umbrella.fragments.StartFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -12,9 +13,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         supportFragmentManager.beginTransaction()
-            .add(R.id.fragmentContainer,NavigationFragment())
+            .add(R.id.fragmentContainer,StartFragment())
             .commit()
 
+
+
     }
-    
+
 }

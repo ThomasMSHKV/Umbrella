@@ -14,6 +14,8 @@ import android.widget.Toast
 import com.example.umbrella.R
 import kotlinx.android.synthetic.main.fragment_first.*
 import kotlinx.android.synthetic.main.fragment_navigation.*
+import kotlinx.android.synthetic.main.fragment_start.*
+import kotlin.concurrent.timer
 
 
 class NavigationFragment : Fragment() {

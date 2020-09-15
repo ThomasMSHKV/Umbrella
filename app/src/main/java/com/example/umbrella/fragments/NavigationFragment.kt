@@ -1,26 +1,24 @@
 package com.example.umbrella.fragments
 
 import android.animation.ObjectAnimator
-import android.animation.ValueAnimator
+import android.content.Context
 import android.media.MediaPlayer
-import android.media.SoundPool
 import android.os.Bundle
 import android.os.Handler
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import com.example.umbrella.R
-import kotlinx.android.synthetic.main.fragment_first.*
 import kotlinx.android.synthetic.main.fragment_navigation.*
-import kotlinx.android.synthetic.main.fragment_start.*
-import kotlin.concurrent.timer
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlin.coroutines.CoroutineContext
 
 
-class NavigationFragment : Fragment() {
-
-
+class NavigationFragment : Fragment(), CoroutineScope {
+    override val coroutineContext: CoroutineContext = Dispatchers.IO
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -29,30 +27,39 @@ class NavigationFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val navigationFragment = NavigationFragment()
-        val nameEditText = nameEditText.text
-        val lastnameEditText = lastNameEditText.text
-        val mediaPlayer: MediaPlayer? = MediaPlayer.create(context,R.raw.drop_song)
+        var NameEditText = nameEditText.text.toString()
+        var lastnameEditText = lastNameEditText.text.toString()
 
-
-        button_register.setOnClickListener {
-            val objectAnimator= ObjectAnimator.ofFloat(it,"translationY",700f)
-            objectAnimator.duration = 2000
-            objectAnimator.start()
-            Handler().postDelayed({mediaPlayer?.start()},1000)
-            navigationFragment.arguments=Bundle().also {
-                it.putInt("key",1)
-                Toast.makeText(activity, "Welcome, $nameEditText $lastnameEditText",Toast.LENGTH_LONG).show()
+        val mediaPlayer: MediaPlayer? = MediaPlayer.create(context, R.raw.drop_song)
+            button_register.setOnClickListener {
+                if (NameEditText.isEmpty() || lastnameEditText.isEmpty()) {
+                Toast.makeText(requireContext(),"Please enter text in name/ln",Toast.LENGTH_LONG).show()
+                return@setOnClickListener
             }
-            Handler().postDelayed({fragmentManager?.beginTransaction()
-                ?.replace(R.id.fragmentContainer,FirstFragment())
-                ?.commit()},1000)
+                val objectAnimator = ObjectAnimator.ofFloat(it, "translationY", 520f)
+                objectAnimator.duration = 700
+                objectAnimator.start()
+                Handler().postDelayed({ mediaPlayer?.start() }, 500)
 
-        }
+                Handler().postDelayed({
+                    Toast.makeText(
+                        it.context, "Welcome " +
+                                " $NameEditText $lastnameEditText", Toast.LENGTH_LONG
+                    ).show()
+                }, 1500)
+            }
+
+            Handler().postDelayed({
+                fragmentManager?.beginTransaction()
+                    ?.replace(R.id.fragmentContainer, FirstFragment())
+                    ?.commit()
+            }, 2000)
+
 
     }
 
 }
+
 
 
 

@@ -30,14 +30,10 @@ class StartFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val navigationFragment = NavigationFragment()
-
-
-
         Handler().postDelayed({fragmentManager?.beginTransaction()
-            ?.replace(R.id.fragmentContainer,NavigationFragment())
+            ?.replace(R.id.fragmentContainer,navigationFragment)
             ?.commit()},2500)
 
-        super.onViewCreated(view, savedInstanceState)
         loading_um.animate().apply {
             duration = 2000
             rotationYBy(360f)

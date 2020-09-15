@@ -10,7 +10,7 @@ import com.example.umbrella.R
 import kotlinx.android.synthetic.main.fragment_first.*
 
 
-class FirstFragment : Fragment() {
+    class FirstFragment : Fragment() {
 
 
     override fun onCreateView(

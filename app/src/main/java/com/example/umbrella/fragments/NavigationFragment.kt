@@ -1,7 +1,6 @@
 package com.example.umbrella.fragments
 
 import android.animation.ObjectAnimator
-import android.content.Context
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler
@@ -16,7 +15,6 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlin.coroutines.CoroutineContext
 
-
 class NavigationFragment : Fragment(), CoroutineScope {
     override val coroutineContext: CoroutineContext = Dispatchers.IO
     override fun onCreateView(
@@ -27,15 +25,21 @@ class NavigationFragment : Fragment(), CoroutineScope {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        var NameEditText = nameEditText.text.toString()
-        var lastnameEditText = lastNameEditText.text.toString()
-
+        val nameEditText = nameEditText.text
+        val lastnameEditText = lastNameEditText.text
         val mediaPlayer: MediaPlayer? = MediaPlayer.create(context, R.raw.drop_song)
-            button_register.setOnClickListener {
-                if (NameEditText.isEmpty() || lastnameEditText.isEmpty()) {
-                Toast.makeText(requireContext(),"Please enter text in name/ln",Toast.LENGTH_LONG).show()
+        button_register.setOnClickListener {
+            if (nameEditText.isEmpty() || lastnameEditText.isEmpty()) {
+                Toast.makeText(
+                    requireContext(),
+                    "Please enter text in Username/Ln",
+                    Toast.LENGTH_SHORT
+                ).show()
                 return@setOnClickListener
             }
+
+            button_register.setOnClickListener {
+
                 val objectAnimator = ObjectAnimator.ofFloat(it, "translationY", 520f)
                 objectAnimator.duration = 700
                 objectAnimator.start()
@@ -44,7 +48,7 @@ class NavigationFragment : Fragment(), CoroutineScope {
                 Handler().postDelayed({
                     Toast.makeText(
                         it.context, "Welcome " +
-                                " $NameEditText $lastnameEditText", Toast.LENGTH_LONG
+                                " $nameEditText $lastnameEditText", Toast.LENGTH_LONG
                     ).show()
                 }, 1500)
             }
@@ -56,8 +60,9 @@ class NavigationFragment : Fragment(), CoroutineScope {
             }, 2000)
 
 
-    }
+        }
 
+    }
 }
 
 

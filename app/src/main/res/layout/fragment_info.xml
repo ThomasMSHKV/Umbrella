@@ -6,7 +6,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.InfoFragment">
+    tools:context=".fragments.InfoFragment"
+    android:background="#FFFFFF">
     
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/sun_anim"

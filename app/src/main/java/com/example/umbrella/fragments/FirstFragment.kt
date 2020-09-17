@@ -23,13 +23,12 @@ import kotlinx.android.synthetic.main.fragment_first.*
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val infoFragment = InfoFragment()
         val mediaPlayer: MediaPlayer? = MediaPlayer.create(context,R.raw.drop_song)
-
-
+        val umbrellaMap = Umbrella_mapFragment()
 
         info_bt.setOnClickListener {
             mediaPlayer?.start()
             infoFragment.arguments=Bundle().also {
-                it.putInt("key",1)
+                it.putInt("key", 1)
             }
             fragmentManager?.beginTransaction()
                 ?.replace(R.id.fragmentContainer,infoFragment)
@@ -37,7 +36,16 @@ import kotlinx.android.synthetic.main.fragment_first.*
                 ?.commit()
 
         }
-
+        umbrella_map.setOnClickListener {
+            mediaPlayer?.start()
+            umbrellaMap.arguments=Bundle().also {
+                it.putInt("key", 2)
+            }
+            fragmentManager?.beginTransaction()
+                ?.replace(R.id.fragmentContainer,umbrellaMap)
+                ?.addToBackStack(null)
+                ?.commit()
+        }
     }
 
 }

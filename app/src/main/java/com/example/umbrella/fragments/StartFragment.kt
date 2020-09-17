@@ -29,10 +29,6 @@ class StartFragment : Fragment() {
             ?.replace(R.id.fragmentContainer,NavigationFragment())
             ?.commit()},2500)
 
-        loading_um.animate().apply {
-            duration = 2000
-            rotationYBy(360f)
-        }.start()
     }
 
 }

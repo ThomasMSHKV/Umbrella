@@ -8,14 +8,14 @@
     tools:context=".fragments.StartFragment"
     android:background="@android:color/white">
 
-    <ImageView
+    <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/loading_um"
-        android:layout_width="300dp"
-        android:clickable="true"
-        android:focusable="true"
-        android:layout_height="300dp"
-        android:src="@drawable/zont_picture"
-        android:layout_marginBottom="350dp"
+        android:layout_width="600dp"
+        android:layout_height="600dp"
+        android:layout_marginBottom="100dp"
+        app:lottie_rawRes="@raw/weather_icon"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -25,9 +25,9 @@
         android:layout_width="270dp"
         android:layout_height="wrap_content"
         android:text="@string/umbrella"
-        android:textColor="#AA0202"
+        android:textColor="#177EC3"
         android:textSize="60dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="0dp"
         android:fontFamily="serif"
         app:layout_constraintTop_toBottomOf="@id/loading_um"
         app:layout_constraintStart_toStartOf="parent"

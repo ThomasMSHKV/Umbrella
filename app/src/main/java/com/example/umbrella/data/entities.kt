@@ -1,6 +1,5 @@
 package com.example.umbrella.data
 
-import java.util.*
 
 data class Weather(
     val rates: Rates

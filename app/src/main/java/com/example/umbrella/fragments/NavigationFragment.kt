@@ -28,17 +28,15 @@ class NavigationFragment : Fragment(), CoroutineScope {
         val nameEditText = nameEditText.text
         val lastnameEditText = lastNameEditText.text
         val mediaPlayer: MediaPlayer? = MediaPlayer.create(context, R.raw.drop_song)
-        button_register.setOnClickListener {
-            if (nameEditText.isEmpty() || lastnameEditText.isEmpty()) {
-                Toast.makeText(
-                    requireContext(),
-                    "Please enter text in Username/Ln",
-                    Toast.LENGTH_SHORT
-                ).show()
-                return@setOnClickListener
-            }
 
             button_register.setOnClickListener {
+                if (nameEditText.isEmpty() || lastnameEditText.isEmpty()) {
+                    Toast.makeText(
+                        requireContext(),
+                        "Please enter text in Username/Ln",
+                        Toast.LENGTH_SHORT).show()
+                    return@setOnClickListener
+                }
 
                 val objectAnimator = ObjectAnimator.ofFloat(it, "translationY", 520f)
                 objectAnimator.duration = 700
@@ -47,26 +45,17 @@ class NavigationFragment : Fragment(), CoroutineScope {
 
                 Handler().postDelayed({
                     Toast.makeText(
-                        it.context, "Welcome " +
-                                " $nameEditText $lastnameEditText", Toast.LENGTH_LONG
-                    ).show()
+                        it.context, "Welcome " + " $nameEditText $lastnameEditText", Toast.LENGTH_LONG).show()
                 }, 1500)
-            }
 
-            Handler().postDelayed({
+                Handler().postDelayed({
                 fragmentManager?.beginTransaction()
                     ?.replace(R.id.fragmentContainer, FirstFragment())
-                    ?.commit()
-            }, 2000)
-
+                    ?.commit()},1500)
+            }
 
         }
 
     }
-}
-
-
-
-
 
 

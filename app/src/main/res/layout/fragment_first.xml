@@ -312,18 +312,21 @@
                 android:layout_height="wrap_content" />
 
             <LinearLayout
+                android:id="@+id/umbrella_map"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:background="@drawable/info_bacground"
                 android:gravity="center"
+                android:clickable="true"
+                android:focusable="true"
                 android:orientation="vertical"
                 android:padding="8dp">
 
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:src="@drawable/info"
+                    android:src="@drawable/umbrella_map_image"
                     app:tint="#FFFFFF" />
 
                 <Space
@@ -333,17 +336,17 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Created By"
+                    android:text="Umbrella"
                     android:textColor="@android:color/white"
-                    android:textSize="12dp" />
+                    android:textSize="14dp" />
 
                 <TextView
                     android:id="@+id/about"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="AndroDocs"
+                    android:text="map"
                     android:textColor="@android:color/white"
-                    android:textSize="14dp" />
+                    android:textSize="12dp" />
             </LinearLayout>
 
         </LinearLayout>

@@ -1,4 +1,5 @@
-{"coord": { "lon": 139,"lat": 35},
+{
+  "coord": { "lon": 139,"lat": 35},
   "weather": [
     {
       "id": 800,

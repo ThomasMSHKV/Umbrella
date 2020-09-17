@@ -13,7 +13,7 @@
                 android:width="300dp"/>
             <stroke
                 android:width="3dp"
-                android:color="@android:color/black"
+                android:color="#FFFFFF"
                 android:dashGap="2dp"
                 android:dashWidth="0dp"/>
 

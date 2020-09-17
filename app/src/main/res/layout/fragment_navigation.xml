@@ -16,14 +16,6 @@
         app:layout_constraintTop_toTopOf="parent">
 
 
-        <!--        <ImageView-->
-<!--            android:layout_width="300dp"-->
-<!--            android:layout_height="300dp"-->
-<!--            android:layout_marginBottom="220dp"-->
-<!--            android:padding="10dp"-->
-<!--            android:layout_gravity="center"-->
-<!--            android:src="@drawable/zont_picture"/>-->
-
         <com.airbnb.lottie.LottieAnimationView
             android:id="@+id/loading_um"
             android:layout_width="300dp"
@@ -42,7 +34,8 @@
             android:layout_marginBottom="40dp"
             android:background="@drawable/edits"
             android:hint="@string/name"
-            android:textColorHint="@android:color/white"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/secondary_text_light_nodisable"
             android:paddingStart="18dp"
             android:padding="8dp"
             android:paddingEnd="160dp"
@@ -59,8 +52,9 @@
             android:layout_gravity="center"
             android:layout_marginTop="25dp"
             android:background="@drawable/edits"
-            android:textColorHint="@android:color/white"
+            android:textColorHint="@android:color/secondary_text_light_nodisable"
             android:hint="@string/last_name"
+            android:textColor="@android:color/white"
             android:paddingStart="18dp"
             android:padding="8dp"
             android:paddingEnd="125dp"

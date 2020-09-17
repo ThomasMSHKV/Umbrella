@@ -5,24 +5,34 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
-
     <FrameLayout
         android:id="@+id/fragment_holder"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#FFFFFF"
+        android:background="#0048FF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
+
+        <!--        <ImageView-->
+<!--            android:layout_width="300dp"-->
+<!--            android:layout_height="300dp"-->
+<!--            android:layout_marginBottom="220dp"-->
+<!--            android:padding="10dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:src="@drawable/zont_picture"/>-->
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/loading_um"
             android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:layout_marginBottom="220dp"
-            android:padding="10dp"
+            android:layout_height="250dp"
             android:layout_gravity="center"
-            android:src="@drawable/zont_picture"/>
+            android:layout_marginBottom="220dp"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/registration_anim" />
 
         <EditText
             android:id="@+id/nameEditText"
@@ -32,7 +42,8 @@
             android:layout_marginBottom="40dp"
             android:background="@drawable/edits"
             android:hint="@string/name"
-            android:paddingStart="16dp"
+            android:textColorHint="@android:color/white"
+            android:paddingStart="18dp"
             android:padding="8dp"
             android:paddingEnd="160dp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -48,8 +59,9 @@
             android:layout_gravity="center"
             android:layout_marginTop="25dp"
             android:background="@drawable/edits"
+            android:textColorHint="@android:color/white"
             android:hint="@string/last_name"
-            android:paddingStart="16dp"
+            android:paddingStart="18dp"
             android:padding="8dp"
             android:paddingEnd="125dp"
             app:layout_constraintEnd_toEndOf="parent"

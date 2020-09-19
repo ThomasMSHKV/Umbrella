@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@drawable/style_background"
     tools:context=".fragments.FirstFragment">
 
     <Button
@@ -35,7 +35,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="serif"
         android:text="Umbrella"
-        android:textColor="#0037FF"
+        android:textColor="#FFFFFF"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -72,7 +72,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Clear sky"
-        android:textColor="#0033CC"
+        android:textColor="#FFFFFF"
         android:textSize="18dp"
         android:fontFamily="serif"
         android:layout_marginTop="10dp"
@@ -105,7 +105,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/info_bacground"
+                android:background="@drawable/design_background"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -148,7 +148,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/info_bacground"
+                android:background="@drawable/design_background"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -188,7 +188,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/info_bacground"
+                android:background="@drawable/design_background"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -197,7 +197,7 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:src="@drawable/wind"
-                    app:tint="#FFFFFF" />
+                    app:tint="#FFFFFF"/>
 
                 <Space
                     android:layout_width="wrap_content"
@@ -235,7 +235,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/info_bacground"
+                android:background="@drawable/design_background"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -255,7 +255,7 @@
                     android:layout_height="wrap_content"
                     android:text="Pressure"
                     android:textColor="@android:color/white"
-                    android:textSize="12dp" />
+                    android:textSize="12dp"/>
 
                 <TextView
                     android:id="@+id/pressure"
@@ -263,19 +263,19 @@
                     android:layout_height="wrap_content"
                     android:text="06:40 AM"
                     android:textColor="@android:color/white"
-                    android:textSize="14dp" />
+                    android:textSize="14dp"/>
 
             </LinearLayout>
 
             <Space
                 android:layout_width="10dp"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"/>
 
             <LinearLayout
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/info_bacground"
+                android:background="@drawable/design_background"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -284,18 +284,18 @@
                     android:layout_width="25dp"
                     android:layout_height="25dp"
                     android:src="@drawable/humidity"
-                    app:tint="#FFFFFF" />
+                    app:tint="#FFFFFF"/>
 
                 <Space
                     android:layout_width="wrap_content"
-                    android:layout_height="5dp" />
+                    android:layout_height="5dp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Humidity"
                     android:textColor="@android:color/white"
-                    android:textSize="12dp" />
+                    android:textSize="12dp"/>
 
                 <TextView
                     android:id="@+id/humidity"
@@ -316,7 +316,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/info_bacground"
+                android:background="@drawable/design_background"
                 android:gravity="center"
                 android:clickable="true"
                 android:focusable="true"
@@ -346,7 +346,7 @@
                     android:layout_height="wrap_content"
                     android:text="map"
                     android:textColor="@android:color/white"
-                    android:textSize="12dp" />
+                    android:textSize="12dp"/>
             </LinearLayout>
 
         </LinearLayout>
@@ -359,7 +359,7 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:visibility="gone"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"/>
 
     <TextView
         android:id="@+id/errorText"

@@ -16,8 +16,6 @@ class MainActivity : AppCompatActivity() {
             .add(R.id.fragmentContainer,StartFragment())
             .commit()
 
-
-
     }
 
 }

@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.InfoFragment"
-    android:background="#FFFFFF">
+    android:background="@drawable/style_background">
     
     <com.airbnb.lottie.LottieAnimationView
         android:id="@+id/sun_anim"
@@ -33,7 +33,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textColor="#363537"
+        android:textColor="#FFFFFF"
         android:text="Thomas Mereshkov"
         android:textSize="18dp"
         android:fontFamily="sans-serif-condensed-light"/>
@@ -42,7 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textColor="#363537"
+        android:textColor="#FFFFFF"
         android:text="Michael Chanov"
         android:textSize="18dp"
         android:fontFamily="sans-serif-condensed-light"/>
@@ -62,7 +62,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:textColor="#363537"
+        android:textColor="#FFFFFF"
         android:text="tmereshkov@gmail.com"
         android:textSize="18dp"
         android:fontFamily="sans-serif-condensed-light"/>

@@ -13,16 +13,15 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:background="@drawable/info_bt"
-        android:layout_marginStart="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints" />
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="465dp"
-        android:layout_height="316dp"
-        android:layout_marginTop="18dp"
-        android:padding="30dp"
+        android:layout_width="450dp"
+        android:layout_height="200dp"
+        android:layout_marginTop="75dp"
+        android:padding="40dp"
         android:src="@drawable/phon_for_temp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,9 +36,13 @@
         android:text="Umbrella"
         android:textColor="#FFFFFF"
         android:textSize="50sp"
+        android:shadowRadius="10"
+        android:shadowDx="5"
+        android:shadowDy="5"
+        android:shadowColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"/>
 
     <TextView
         android:id="@+id/temp"
@@ -79,7 +82,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/address"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"/>
+
+
 
 
     <LinearLayout
@@ -135,7 +140,7 @@
                     android:layout_height="wrap_content"
                     android:text="06:40 AM"
                     android:textColor="@android:color/white"
-                    android:textSize="14dp" />
+                    android:textSize="14dp"/>
 
             </LinearLayout>
 
@@ -326,7 +331,7 @@
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:src="@drawable/umbrella_map_image"
+                    android:src="@drawable/umbrella_black"
                     app:tint="#FFFFFF" />
 
                 <Space
@@ -344,7 +349,7 @@
                     android:id="@+id/about"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="map"
+                    android:text="Corparation"
                     android:textColor="@android:color/white"
                     android:textSize="12dp"/>
             </LinearLayout>

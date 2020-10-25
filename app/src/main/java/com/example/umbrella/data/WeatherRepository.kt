@@ -11,7 +11,7 @@ class WeatherRepository: CoroutineScope {
     override val coroutineContext: CoroutineContext = Dispatchers.IO
 
     private val weatherApi = Retrofit.Builder()
-        .baseUrl("https://openweathermap.org/current")
+        .baseUrl("https://www.metaweather.com//")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
         .create(WeatherAPI::class.java)

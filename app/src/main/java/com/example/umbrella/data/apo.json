@@ -1,43 +1,75 @@
-{
-  "coord": { "lon": 139,"lat": 35},
-  "weather": [
-    {
-      "id": 800,
-      "main": "Clear",
-      "description": "clear sky",
-      "icon": "01n"
-    }
-  ],
-  "base": "stations",
-  "main": {
-    "temp": 281.52,
-    "feels_like": 278.99,
-    "temp_min": 280.15,
-    "temp_max": 283.71,
-    "pressure": 1016,
-    "humidity": 93
+[
+  {
+    "distance": 1836,
+    "title": "Santa Cruz",
+    "location_type": "City",
+    "woeid": 2488853,
+    "latt_long": "36.974018,-122.030952"
   },
-  "wind": {
-    "speed": 0.47,
-    "deg": 107.538
+  {
+    "distance": 43722,
+    "title": "San Jose",
+    "location_type": "City",
+    "woeid": 2488042,
+    "latt_long": "37.338581,-121.885567"
   },
-  "clouds": {
-    "all": 2
+  {
+    "distance": 49177,
+    "title": "Mountain View",
+    "location_type": "City",
+    "woeid": 2455920,
+    "latt_long": "37.39999,-122.079552"
   },
-  "dt": 1560350192,
-  "sys": {
-    "type": 3,
-    "id": 2019346,
-    "message": 0.0065,
-    "country": "JP",
-    "sunrise": 1560281377,
-    "sunset": 1560333478
+  {
+    "distance": 96531,
+    "title": "Oakland",
+    "location_type": "City",
+    "woeid": 2463583,
+    "latt_long": "37.80508,-122.273071"
   },
-  "timezone": 32400,
-  "id": 1851632,
-  "name": "Shuzenji",
-  "cod": 200
-}
+  {
+    "distance": 97420,
+    "title": "San Francisco",
+    "location_type": "City",
+    "woeid": 2487956,
+    "latt_long": "37.777119, -122.41964"
+  },
+  {
+    "distance": 185820,
+    "title": "Sacramento",
+    "location_type": "City",
+    "woeid": 2486340,
+    "latt_long": "38.579060,-121.491013"
+  },
+  {
+    "distance": 200162,
+    "title": "Fresno",
+    "location_type": "City",
+    "woeid": 2407517,
+    "latt_long": "36.740681,-119.785728"
+  },
+  {
+    "distance": 287032,
+    "title": "Lake Tahoe",
+    "location_type": "City",
+    "woeid": 23511744,
+    "latt_long": "39.021400,-120.044823"
+  },
+  {
+    "distance": 322803,
+    "title": "Bakersfield",
+    "location_type": "City",
+    "woeid": 2358492,
+    "latt_long": "35.351189,-119.024063"
+  },
+  {
+    "distance": 469934,
+    "title": "Los Angeles",
+    "location_type": "City",
+    "woeid": 2442047,
+    "latt_long": "34.053490,-118.245323"
+  }
+]
 
 
 

@@ -8,6 +8,8 @@
     android:background="@drawable/style_background"
     tools:context=".fragments.FirstFragment">
 
+    <include layout="@layout/activity_main"/>
+
     <Button
         android:id="@+id/info_bt"
         android:layout_width="40dp"
@@ -34,7 +36,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="serif"
         android:text="Umbrella"
-        android:textColor="#FFFFFF"
+        android:textColor="#FF5700"
         android:textSize="50sp"
         android:shadowRadius="10"
         android:shadowDx="5"

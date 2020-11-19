@@ -10,7 +10,6 @@
     <solid
         android:color="@android:color/white" />
 
-
     <padding
         android:bottom="10dp"
         android:left="16dp"

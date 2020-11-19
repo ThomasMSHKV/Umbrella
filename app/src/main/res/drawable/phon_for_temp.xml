@@ -4,15 +4,13 @@
         <shape
             android:shape="rectangle">
             <solid
-                android:color="#7C511E06"/>
+                android:color="#FF7700"/>
             <corners
                 android:radius="25dp"/>
-<!--            <size-->
-<!--                android:height="70dp"-->
-<!--                android:width="250dp"/>-->
+
             <stroke
-                android:width="2dp"
-                android:color="#FFFFFF"
+                android:width="3dp"
+                android:color="#000000"
                 android:dashGap="0dp"
                 android:dashWidth="10dp"/>
 

@@ -8,15 +8,20 @@
     tools:context=".ui.MainActivity"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+
+
     <Button
         android:id="@+id/sheet_btn"
         android:layout_width="50dp"
-        android:visibility="gone"
         android:layout_height="50dp"
+        android:visibility="invisible"
+        tools:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         android:background="@drawable/arrow_btn"/>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

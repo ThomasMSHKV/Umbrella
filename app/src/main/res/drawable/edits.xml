@@ -13,7 +13,7 @@
                 android:width="300dp"/>
             <stroke
                 android:width="3dp"
-                android:color="#FFFFFF"
+                android:color="#000000"
                 android:dashGap="2dp"
                 android:dashWidth="0dp"/>
 
@@ -33,7 +33,7 @@
                 android:width="300dp"/>
             <stroke
                 android:width="3dp"
-                android:color="#FFFFFF"
+                android:color="#040000"
                 android:dashGap="2dp"
                 android:dashWidth="0dp"/>
 

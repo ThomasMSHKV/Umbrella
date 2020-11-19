@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.umbrella.R
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_navigation.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -29,8 +30,11 @@ class NavigationFragment : Fragment(), CoroutineScope {
         val lastnameEditText = lastNameEditText.text
         val mediaPlayer: MediaPlayer? = MediaPlayer.create(context, R.raw.drop_song)
 
+
+
             button_register.setOnClickListener {
                 if (nameEditText.isEmpty() || lastnameEditText.isEmpty()) {
+
                     Toast.makeText(
                         requireContext(),
                         "Please enter text in Username/Ln",

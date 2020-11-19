@@ -4,13 +4,17 @@
         <shape
             android:shape="rectangle">
 
-            <gradient
-                android:startColor="#FF0000"
-                android:endColor="#E2EA00"
-                android:angle="90"/>
+            <solid
+                android:color="#FFFFFF"/>
+
+<!--            <gradient-->
+<!--                android:startColor="#D31D1D"-->
+<!--            android:endColor="#FFFFFF"-->
+<!--            android:angle="90"/>-->
         </shape>
     </item>
 </selector>
+
 
 
    

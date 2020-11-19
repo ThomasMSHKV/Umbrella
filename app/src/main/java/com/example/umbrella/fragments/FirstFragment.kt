@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.umbrella.R
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_first.*
 
 
@@ -23,6 +25,16 @@ import kotlinx.android.synthetic.main.fragment_first.*
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val infoFragment = InfoFragment()
 
+        val bottomsheetFragment = BottomSheet_Fragment()
+        BottomSheetBehavior.STATE_COLLAPSED
+
+        sheet_btn.visibility = View.VISIBLE
+
+        sheet_btn.setOnClickListener {
+            bottomsheetFragment.show(requireActivity().supportFragmentManager, "BottomSheetFragment")
+
+
+        }
 
         info_bt.setOnClickListener {
             infoFragment.arguments=Bundle().also {

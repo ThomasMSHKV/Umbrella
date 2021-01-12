@@ -18,10 +18,10 @@
                         android:startY="210"
                         android:type="linear">
                         <item
-                            android:color="#FF5100"
+                            android:color="#7700FF"
                             android:offset="0" />
                         <item
-                            android:color="#FFAB00"
+                            android:color="#B44CDA"
                             android:offset="1" />
                     </gradient>
                 </aapt:attr>

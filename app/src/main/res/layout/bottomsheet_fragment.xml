@@ -43,7 +43,7 @@
         android:scaleType="centerCrop"
         android:background="@android:color/white"
         app:riv_corner_radius_top_left="25dp"
-        app:riv_corner_radius_top_right="25dp" />
+        app:riv_corner_radius_top_right="25dp"/>
 
     <Button
         android:layout_width="260dp"

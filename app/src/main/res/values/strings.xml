@@ -4,5 +4,20 @@
     <string name="name">Username</string>
     <string name="last_name">Last name</string>
     <string name="umbrella">Umbrella</string>
-    <string name="text_description">Носите все самое лучшее, или не носите ничего, шарф, куртка</string>
+    <string name="temp">29°C</string>
+    <string name="city">Moscow. RU</string>
+    <string name="sky">Clear sky</string>
+    <string name="sunrise">06:40 AM</string>
+    <string name="sunset">06:40 AM</string>
+    <string name="wind">06:40 AM</string>
+    <string name="pressure">06:40 AM</string>
+    <string name="humidity">06:40 AM</string>
+
+
+
+
+
+
+
+    <string name="text_description">Сегодня -5, это двольно холодно. Наденьте Пуховик, шапку, шарф если есть возможность и подштаники, что бы чувствоввать себя комфортно ваша утепленность должна составить минимум 75%</string>
 </resources>

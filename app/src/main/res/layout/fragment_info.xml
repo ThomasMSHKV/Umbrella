@@ -9,20 +9,14 @@
     tools:context=".fragments.InfoFragment"
     android:background="@drawable/style_background">
     
-    <com.airbnb.lottie.LottieAnimationView
-        android:id="@+id/sun_anim"
-        android:layout_gravity="center"
-        android:layout_width="280dp"
-        android:layout_height="280dp"
-        app:lottie_rawRes="@raw/simple_sun"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="false"/>
+
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Разработчики"
         android:textSize="20dp"
+        android:layout_marginTop="200dp"
         android:textColor="@android:color/black"
         android:textStyle="bold"
         android:layout_marginStart="40dp"
@@ -34,7 +28,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textColor="#FFFFFF"
-        android:text="Thomas Mereshkov"
+        android:text="Oleg Mereshkov"
         android:textSize="18dp"
         android:fontFamily="sans-serif-condensed-light"/>
 

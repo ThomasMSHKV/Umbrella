@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/firstScreen"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -36,12 +37,8 @@
         android:layout_height="wrap_content"
         android:fontFamily="serif"
         android:text="Umbrella"
-        android:textColor="#FF5700"
+        android:textColor="#FFFFFF"
         android:textSize="50sp"
-        android:shadowRadius="10"
-        android:shadowDx="5"
-        android:shadowDy="5"
-        android:shadowColor="#000000"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints"/>
@@ -52,7 +49,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="55dp"
         android:fontFamily="sans-serif-thin"
-        android:text="29°C"
+        tools:text="@string/temp"
         android:textColor="#FFFFFF"
         android:textSize="55dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -64,8 +61,8 @@
         android:id="@+id/address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Moscow. RU"
-        android:textColor="@android:color/white"
+        tools:text="@string/city"
+        android:textColor="#FFFFFF"
         android:textSize="24dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,8 +73,8 @@
         android:id="@+id/description_info"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Clear sky"
-        android:textColor="#FFFFFF"
+        tools:text="@string/sky"
+        android:textColor="#E8FFFFFF"
         android:textSize="18dp"
         android:fontFamily="serif"
         android:layout_marginTop="10dp"
@@ -114,6 +111,8 @@
                 android:layout_weight="1"
                 android:background="@drawable/design_background"
                 android:gravity="center"
+                android:elevation="10dp"
+
                 android:orientation="vertical"
                 android:padding="8dp">
 
@@ -131,7 +130,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sunrise"
+                    tools:text="Sunrise"
                     android:textColor="@android:color/white"
                     android:textSize="12dp" />
 
@@ -140,7 +139,7 @@
                     android:id="@+id/sunrise"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="06:40 AM"
+                    tools:text="@string/sunrise"
                     android:textColor="@android:color/white"
                     android:textSize="14dp"/>
 
@@ -173,7 +172,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sunset"
+                    tools:text="Sunset"
                     android:textColor="@android:color/white"
                     android:textSize="12dp" />
 
@@ -181,7 +180,7 @@
                     android:id="@+id/sunset"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="06:40 AM"
+                    tools:text="@string/sunset"
                     android:textColor="@android:color/white"
                     android:textSize="14dp" />
 
@@ -213,7 +212,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Wind"
+                    tools:text="Wind"
                     android:textColor="@android:color/white"
                     android:textSize="12dp" />
 
@@ -221,7 +220,7 @@
                     android:id="@+id/wind"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="06:40 AM"
+                    tools:text="@string/wind"
                     android:textColor="@android:color/white"
                     android:textSize="14dp" />
 
@@ -260,7 +259,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pressure"
+                    tools:text="Pressure"
                     android:textColor="@android:color/white"
                     android:textSize="12dp"/>
 
@@ -268,7 +267,7 @@
                     android:id="@+id/pressure"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="06:40 AM"
+                    tools:text="@string/pressure"
                     android:textColor="@android:color/white"
                     android:textSize="14dp"/>
 
@@ -300,7 +299,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Humidity"
+                    tools:text="Humidity"
                     android:textColor="@android:color/white"
                     android:textSize="12dp"/>
 
@@ -308,7 +307,7 @@
                     android:id="@+id/humidity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="06:40 AM"
+                    tools:text="@string/humidity"
                     android:textColor="@android:color/white"
                     android:textSize="14dp" />
 
@@ -343,7 +342,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Umbrella"
+                    tools:text="Umbrella"
                     android:textColor="@android:color/white"
                     android:textSize="14dp" />
 
@@ -351,7 +350,7 @@
                     android:id="@+id/about"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Corparation"
+                    tools:text="Corparation"
                     android:textColor="@android:color/white"
                     android:textSize="12dp"/>
             </LinearLayout>
@@ -366,16 +365,10 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:visibility="gone"
+        style="@style/Widget.AppCompat.ProgressBar"
         tools:ignore="MissingConstraints"/>
 
-    <TextView
-        android:id="@+id/errorText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:visibility="gone"
-        android:text="Something went wrong"
-        tools:ignore="MissingConstraints"/>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

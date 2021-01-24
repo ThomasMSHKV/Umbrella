@@ -8,9 +8,11 @@
             <corners
                 android:radius="25dp"/>
             <gradient
+                android:angle="90"
                 android:startColor="#9C2E1943"
                 android:endColor="#000000"
                 android:centerColor="#290B45" />
+
 
             <stroke
                 android:width="3dp"

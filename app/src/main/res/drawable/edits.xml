@@ -25,17 +25,13 @@
         <shape
             android:shape="rectangle">
             <solid
-                android:color="#9A9895"/>
+                android:color="#D5D5D2"/>
             <corners
                 android:radius="35dp"/>
             <size
                 android:height="70dp"
                 android:width="300dp"/>
-            <stroke
-                android:width="3dp"
-                android:color="#FFFFFF"
-                android:dashGap="2dp"
-                android:dashWidth="0dp"/>
+
 
         </shape>
     </item>

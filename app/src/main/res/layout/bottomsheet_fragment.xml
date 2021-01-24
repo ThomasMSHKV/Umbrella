@@ -46,6 +46,7 @@
         app:riv_corner_radius_top_right="25dp"/>
 
     <Button
+        android:id="@+id/buttonSheetBtn"
         android:layout_width="260dp"
         android:layout_height="55dp"
         android:layout_marginTop="25dp"

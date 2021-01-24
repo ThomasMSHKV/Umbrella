@@ -15,7 +15,8 @@ class BottomSheet_Fragment: BottomSheetDialogFragment(){
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.bottomsheet_fragment,container,false)
-    }
 
+
+    }
 
 }

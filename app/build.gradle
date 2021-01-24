@@ -49,8 +49,11 @@ dependencies {
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-core:1.4.2'
 
     //Retrofit2
+    def retrofit_version = '2.9.0'
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+
 
     //BottomSheet
     implementation 'com.google.android.material:material:1.2.1'

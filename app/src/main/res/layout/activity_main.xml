@@ -13,14 +13,14 @@
 
     <Button
         android:id="@+id/sheet_btn"
-        android:layout_width="50dp"
+        android:layout_width="0dp"
         android:layout_height="50dp"
         android:visibility="invisible"
         tools:visibility="visible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:background="@drawable/arrow_btn"/>
+        android:background="@drawable/line_for_sheet24"/>
 
 
 

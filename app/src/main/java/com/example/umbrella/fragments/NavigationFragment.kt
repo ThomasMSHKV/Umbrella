@@ -34,7 +34,6 @@ class NavigationFragment : Fragment(), CoroutineScope {
 
             button_register.setOnClickListener {
                 if (nameEditText.isEmpty() || lastnameEditText.isEmpty()) {
-
                     Toast.makeText(
                         requireContext(),
                         "Please enter text in Username/Ln",

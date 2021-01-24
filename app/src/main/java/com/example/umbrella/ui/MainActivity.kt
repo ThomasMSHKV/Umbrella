@@ -3,6 +3,7 @@ package com.example.umbrella.ui
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.EditText
 import com.example.umbrella.R
 import com.example.umbrella.fragments.BottomSheet_Fragment
 import com.example.umbrella.fragments.FirstFragment
@@ -14,7 +15,7 @@ import kotlinx.android.synthetic.main.fragment_navigation.*
 
 class MainActivity : AppCompatActivity() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+        override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 

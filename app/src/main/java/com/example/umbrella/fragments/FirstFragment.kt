@@ -1,31 +1,23 @@
 package com.example.umbrella.fragments
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
-import android.widget.TextView
-import android.widget.Toast
-import androidx.core.widget.doAfterTextChanged
+import androidx.fragment.app.Fragment
 import com.example.umbrella.R
 import com.example.umbrella.data.Weather
 import com.example.umbrella.data.WeatherApi
-import com.example.umbrella.data.WeatherData
 import com.example.umbrella.data.WeatherRepository
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_first.*
-import kotlinx.android.synthetic.main.fragment_navigation.*
 import kotlinx.coroutines.*
 import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import java.util.zip.Inflater
 
-class FirstFragment : Fragment(), WeatherApi, CoroutineScope {
+
+class FirstFragment : Fragment(),  CoroutineScope {
 
     override val coroutineContext = Dispatchers.Main
 
@@ -41,13 +33,9 @@ class FirstFragment : Fragment(), WeatherApi, CoroutineScope {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
         val infoFragment = InfoFragment()
         val repository = WeatherRepository()
         val bottomsheetFragment = BottomSheet_Fragment()
-
-
-
 
         launch {
             val weather = repository.getData()
@@ -69,53 +57,45 @@ class FirstFragment : Fragment(), WeatherApi, CoroutineScope {
             }
 
 
-        }
 
-        BottomSheetBehavior.STATE_COLLAPSED
-        sheet_btn.visibility = View.VISIBLE
-        sheet_btn.setOnTouchListener(object : View.OnTouchListener {
-            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
-                when (event?.action) {
-                    MotionEvent.ACTION_DOWN ->
 
-                        bottomsheetFragment.show(
-                            requireActivity().supportFragmentManager,
-                            "BottomSheetFragment"
-                        )
+
+
+            BottomSheetBehavior.STATE_COLLAPSED
+            sheet_btn.visibility = View.VISIBLE
+            sheet_btn.setOnTouchListener(object : View.OnTouchListener {
+                override fun onTouch(v: View?, event: MotionEvent?): Boolean {
+                    when (event?.action) {
+                        MotionEvent.ACTION_DOWN ->
+
+                            bottomsheetFragment.show(
+                                requireActivity().supportFragmentManager,
+                                "BottomSheetFragment"
+                            )
+                    }
+                    return v?.onTouchEvent(event) ?: true
                 }
-                return v?.onTouchEvent(event) ?: true
+
+
+            })
+
+            info_bt.setOnClickListener {
+                infoFragment.arguments = Bundle().also {
+                    it.putInt("key", 1)
+                }
+                fragmentManager?.beginTransaction()
+                    ?.replace(R.id.fragmentContainer, infoFragment)
+                    ?.addToBackStack(null)
+                    ?.commit()
+
             }
-
-
-        })
-
-        info_bt.setOnClickListener {
-            infoFragment.arguments = Bundle().also {
-                it.putInt("key", 1)
-            }
-            fragmentManager?.beginTransaction()
-                ?.replace(R.id.fragmentContainer, infoFragment)
-                ?.addToBackStack(null)
-                ?.commit()
-
         }
 
-    }
 
-    override fun getWeather(name: String?, apiKey: String): Call<WeatherData> {
-        val repository = WeatherRepository()
-        val weather = repository.getData()
-
-
-        return getWeather(name, apiKey)
-
-
-    }
-
-    override fun getResponse(): Call<WeatherData> {
-
-    }
-
+        }
+//        override fun getWeather(name: String?, apiKey: String): Call<Weather> {
+//
+//    }
 
 }
 

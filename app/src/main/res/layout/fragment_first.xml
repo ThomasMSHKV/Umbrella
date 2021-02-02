@@ -54,34 +54,34 @@
 
 
     <EditText
-        android:id="@+id/nameEdit"
+        android:id="@+id/searchCity"
         android:layout_width="150dp"
         android:layout_height="25dp"
-        android:background="@drawable/edits"
         android:maxLines="1"
-        android:paddingStart="10dp"
-        android:textColor="@android:color/black"
+        android:textColor="#FFFFFF"
+        android:hint="City"
         android:textColorHint="@android:color/darker_gray"
         android:textSize="15sp"
+        android:paddingStart="10dp"
+        android:background="@drawable/edits"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/temp"
-        tools:hint="@string/name"
         tools:ignore="MissingConstraints" />
 
-    <Button
-        android:id="@+id/nameBtn"
-        android:layout_width="17dp"
-        android:layout_height="17dp"
-        android:layout_marginStart="110dp"
-        android:layout_marginBottom="320dp"
-        android:background="@drawable/search_im_24"
-        android:clickable="true"
-        android:focusable="true"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+<!--    <Button-->
+<!--        android:id="@+id/btnCity"-->
+<!--        android:layout_width="17dp"-->
+<!--        android:layout_height="17dp"-->
+<!--        android:layout_marginStart="110dp"-->
+<!--        android:layout_marginBottom="320dp"-->
+<!--        android:background="@drawable/search_im_24"-->
+<!--        android:clickable="true"-->
+<!--        android:focusable="true"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"/>-->
 
     <TextView
         android:id="@+id/description"
@@ -93,7 +93,7 @@
         android:textSize="18dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nameEdit"
+        app:layout_constraintTop_toBottomOf="@id/searchCity"
         tools:ignore="MissingConstraints"
         tools:text="@string/description" />
 

@@ -4,6 +4,7 @@ import com.google.gson.annotations.SerializedName
 
 
 data class Weather(
+
     val weatherData: WeatherData
 
 )

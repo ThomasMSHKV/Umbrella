@@ -12,12 +12,12 @@ const val url = "api.openweathermap.org/data/2.5/weather?q=Moscow&appid=5fc05d7c
 
 interface WeatherApi {
 
-
-    @GET(url)
+    @GET("weather")
     fun getWeather(
         @Query("q") name: String?,
         @Query("apiKey") apiKey: String
-    ): Call<WeatherData>
+    ): Call<Weather>
+
 
 
     //    fun getWeather() : Call<WeatherData>

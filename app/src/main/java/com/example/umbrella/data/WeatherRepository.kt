@@ -11,6 +11,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 class WeatherRepository : CoroutineScope {
     override val coroutineContext = Dispatchers.IO
     private val weatherApi: WeatherApi = Retrofit.Builder()
+
         .baseUrl("https://api.openweathermap.org/data/2.5/")
         .addConverterFactory(GsonConverterFactory.create())
         .build()
@@ -21,6 +22,7 @@ class WeatherRepository : CoroutineScope {
         weatherApi.getWeather("name", "apiKey")
             .execute()
             .body()
+            ?.weatherData
 
 
 

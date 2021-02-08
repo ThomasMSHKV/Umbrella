@@ -3,36 +3,28 @@ package com.example.umbrella.data
 import com.google.gson.annotations.SerializedName
 
 
-data class Weather(
+data class WeatherData(
 
-    val weatherData: WeatherData
-
+    val weather: List<Weather>,
+    val main : Main,
+    val wind: Wind
 )
 
-data class WeatherData(
-    @SerializedName("description") val description: Description,
-    @SerializedName("main") val main: Main,
-    @SerializedName("sys") val sys: Sys,
-    @SerializedName("name") val name: Name,
-    @SerializedName("wind") val wind: Wind
-
+data class Weather(
+    @SerializedName("description") val description: String,
+    @SerializedName("main") val main: String,
+    @SerializedName("name") val name: Name
 )
 
 data class Main(
     @SerializedName("humidity") val humidity: Int,
     @SerializedName("pressure") val pressure: Int,
-    @SerializedName("temp") val temp: Double
+    @SerializedName("temp") val temp: Double,
+    @SerializedName("feels_like") val feels_like: Double,
+    @SerializedName("temp_min") val  temp_min: Double,
+    @SerializedName("temp_max") val temp_max: Double
 )
 
-data class Sys(
-    @SerializedName("sunrise") val sunrise: Int,
-    @SerializedName("sunset") val sunset: Int
-)
-
-data class Description(
-    @SerializedName("description") val description: String
-
-)
 
 data class Name(
     @SerializedName("name") val name: String
@@ -40,21 +32,10 @@ data class Name(
 )
 
 data class Wind(
-    @SerializedName("speed") val speed: Double
+    @SerializedName("speed") val speed: Int
 
 )
 
 
-//data class WeatherData(
-//    @SerializedName("humidity") val humidity: Int,
-//    @SerializedName("pressure") val pressure: Int,
-//    @SerializedName("temp") val temp: Double,
-//    @SerializedName("sunrise") val sunrise: Int,
-//    @SerializedName("sunset") val sunset: Int,
-//    @SerializedName("name") val name: String,
-//    @SerializedName("description") val description: String,
-//    @SerializedName("speed") val speed: Double
-//
-//)
 
 

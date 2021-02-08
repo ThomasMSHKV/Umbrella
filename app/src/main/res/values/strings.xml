@@ -6,10 +6,9 @@
     <string name="umbrella">Umbrella</string>
     <string name="temp">29°C</string>
     <string name="name">City</string>
-    <string name="country">RU </string>
     <string name="description">Clear sky</string>
-    <string name="sunrise">06:40 AM</string>
-    <string name="sunset">06:40 AM</string>
+    <string name="max_temp">5.6°C</string>
+    <string name="min_temp">-5.4°C</string>
     <string name="wind">06:40 AM</string>
     <string name="pressure">06:40 AM</string>
     <string name="humidity">06:40 AM</string>

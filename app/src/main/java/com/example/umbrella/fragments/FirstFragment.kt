@@ -41,7 +41,6 @@ class FirstFragment : Fragment(), CoroutineScope {
                 loader.visibility = View.GONE
                 firstScreen.visibility = View.VISIBLE
 
-
             }
 
 
@@ -90,27 +89,30 @@ class FirstFragment : Fragment(), CoroutineScope {
     }
 
 
+
+
     fun viewFlipper() {
         val viewflipper = view_Flipper
         viewflipper.isAutoStart
-        viewflipper.flipInterval = 2000
-//        shodaTime = ShodaTime.WINTER
-//        shodaTime?.images()?.get(0)?.let { viewflipper.imageOne.setImageResource(it) }
-//        shodaTime?.images()?.get(1)?.let { viewflipper.imageTwo.setImageResource(it) }
-//        shodaTime?.images()?.get(2)?.let { viewflipper.imageThree.setImageResource(it) }
-//        shodaTime?.images()?.get(3)?.let { viewflipper.imageFour.setImageResource(it) }
-//
+        viewflipper.flipInterval = 3500
+
+        shodaTime = ShodaTime.WINTER
+        shodaTime?.images()?.get(0)?.let { viewflipper.imageOne.setImageResource(it) }
+        shodaTime?.images()?.get(1)?.let { viewflipper.imageTwo.setImageResource(it) }
+        shodaTime?.images()?.get(2)?.let { viewflipper.imageThree.setImageResource(it) }
+        shodaTime?.images()?.get(3)?.let { viewflipper.imageFour.setImageResource(it) }
+
 //        shodaTime = ShodaTime.SUMMER
 //        shodaTime?.images()?.get(0)?.let { viewflipper.imageOne.setImageResource(it) }
 //        shodaTime?.images()?.get(1)?.let { viewflipper.imageTwo.setImageResource(it) }
 //        shodaTime?.images()?.get(2)?.let { viewflipper.imageThree.setImageResource(it) }
 //        shodaTime?.images()?.get(3)?.let { viewflipper.imageFour.setImageResource(it) }
 
-        shodaTime = ShodaTime.SPRING
-        shodaTime?.images()?.get(0)?.let { viewflipper.imageOne.setImageResource(it) }
-        shodaTime?.images()?.get(1)?.let { viewflipper.imageTwo.setImageResource(it) }
-        shodaTime?.images()?.get(2)?.let { viewflipper.imageThree.setImageResource(it) }
-        shodaTime?.images()?.get(3)?.let { viewflipper.imageFour.setImageResource(it) }
+//        shodaTime = ShodaTime.SPRING
+//        shodaTime?.images()?.get(0)?.let { viewflipper.imageOne.setImageResource(it) }
+//        shodaTime?.images()?.get(1)?.let { viewflipper.imageTwo.setImageResource(it) }
+//        shodaTime?.images()?.get(2)?.let { viewflipper.imageThree.setImageResource(it) }
+//        shodaTime?.images()?.get(3)?.let { viewflipper.imageFour.setImageResource(it) }
 
 //        shodaTime = ShodaTime.FALL
 //        shodaTime?.images()?.get(0)?.let { viewflipper.imageOne.setImageResource(it) }
@@ -121,8 +123,6 @@ class FirstFragment : Fragment(), CoroutineScope {
 
 
     }
-
-
 
 
     fun getWeather() {

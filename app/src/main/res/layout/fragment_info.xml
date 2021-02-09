@@ -43,7 +43,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginBottom="100dp"
+        android:layout_marginBottom="80dp"
         android:text="@string/info_about_app"
         android:fontFamily="serif"
         android:textAlignment="center"
@@ -57,7 +57,6 @@
         android:textStyle="italic"
         android:textColor="@color/gray"
         android:layout_gravity="center"
-        android:layout_marginBottom="30dp"
         android:textSize="15sp"/>
 
     <TextView
@@ -67,7 +66,7 @@
         android:fontFamily="serif"
         android:layout_gravity="center"
         android:textColor="@android:color/white"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="50dp"
         />
 
 

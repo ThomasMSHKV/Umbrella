@@ -7,6 +7,7 @@
         <item name="colorAccent">#FFFFFF</item>
         <item name="android:statusBarColor">#6E0680</item>
 
+
     </style>
 
     <style name="AppBottomSheetDialogTheme"

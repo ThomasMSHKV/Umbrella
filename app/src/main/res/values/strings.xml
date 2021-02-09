@@ -20,5 +20,7 @@
     <string name="version_text">Версия программы: 1.0</string>
     <string name="developers">Разработчики: <b><i>«Flame technologies»</i></b></string>
     <string name="about_app">О приложении</string>
+    <string name="appbar_scrolling_view_behavior" translatable="false">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
+
 
 </resources>

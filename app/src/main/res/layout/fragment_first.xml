@@ -387,7 +387,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/info_bt"
+        android:id="@+id/info_button"
         android:layout_width="35dp"
         android:layout_height="35dp"
         android:background="@drawable/info_bt"
@@ -420,7 +420,7 @@
         app:layout_constraintTop_toTopOf="@id/imageFlip"/>
 
     <ViewFlipper
-        android:id="@+id/vFlipper"
+        android:id="@+id/view_Flipper"
         android:layout_width="350dp"
         android:layout_height="180dp"
         android:flipInterval="3500"

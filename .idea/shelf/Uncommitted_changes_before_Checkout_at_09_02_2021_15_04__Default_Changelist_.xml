@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_09_02_2021_15_04_[Default_Changelist]" date="1612872246402" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_09_02_2021_15_04_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 09.02.2021 15:04 [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="app/src/main/res/drawable/zont_picture.jpg" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/umbrella_in_logo.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_09_02_2021_15_04_[Default_Changelist]/umbrella_in_logo.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/src/main/res/drawable/logo_image.jpg" />
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/logo_image.jpg" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_09_02_2021_15_04_[Default_Changelist]/logo_image.jpg" />
+  </binary>
+</changelist>

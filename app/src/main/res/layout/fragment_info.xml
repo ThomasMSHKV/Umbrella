@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.appcompat.widget.LinearLayoutCompat
+<FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
@@ -11,48 +11,66 @@
 
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Разработчик"
+        android:text="@string/about_app"
         android:textSize="20dp"
-        android:layout_marginTop="200dp"
-        android:textColor="@android:color/black"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/white"
         android:textStyle="bold"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginStart="20dp"
         android:gravity="center"/>
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textColor="#FFFFFF"
-        android:text="Flame Technologies"
-        android:textSize="18dp"
-        android:fontFamily="sans-serif-condensed-light"/>
-
-
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/umbrella_in_logo"
+        android:layout_gravity="center"
+        android:layout_marginBottom="250dp"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Свои жалобы и предпочтения вы можете отправить"
-        android:textColor="@android:color/black"
+        android:text="@string/umbrella"
+        android:textSize="20sp"
+        android:fontFamily="serif"
+        android:layout_marginBottom="170dp"
+        android:textColor="@android:color/white"
         android:textStyle="bold"
-        android:layout_marginTop="5dp"
-        android:textSize="16dp"
-        android:gravity="center"/>
-
+        android:layout_gravity="center"/>
 
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textColor="#FFFFFF"
-        android:text="tmereshkov@gmail.com"
-        android:textSize="18dp"
-        android:fontFamily="sans-serif-condensed-light"/>
+        android:layout_gravity="center"
+        android:layout_marginBottom="100dp"
+        android:text="@string/info_about_app"
+        android:fontFamily="serif"
+        android:textAlignment="center"
+        android:textSize="15sp"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/version_text"
+        android:textStyle="italic"
+        android:textColor="@color/gray"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/developers"
+        android:fontFamily="serif"
+        android:layout_gravity="center"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="20dp"
+        />
 
 
 
-</androidx.appcompat.widget.LinearLayoutCompat>
+
+</FrameLayout>

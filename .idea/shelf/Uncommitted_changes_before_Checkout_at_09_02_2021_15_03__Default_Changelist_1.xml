@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_09_02_2021_15_03_[Default_Changelist]1" date="1612872207379" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_09_02_2021_15_03_[Default_Changelist]1/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 09.02.2021 15:03 [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="app/src/main/res/drawable/summer2.jpg" />
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/summer2.jpg" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_09_02_2021_15_03_[Default_Changelist]1/summer2.jpg" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" />
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/umbrella_in_logo.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_09_02_2021_15_03_[Default_Changelist]1/umbrella_in_logo.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/src/main/res/drawable/logo_image.jpg" />
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/logo_image.jpg" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_09_02_2021_15_03_[Default_Changelist]1/logo_image.jpg" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="app/src/main/res/drawable/summer3.jpg" />
+    <option name="AFTER_PATH" value="app/src/main/res/drawable/summer3.jpg" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_09_02_2021_15_03_[Default_Changelist]1/summer3.jpg" />
+  </binary>
+</changelist>

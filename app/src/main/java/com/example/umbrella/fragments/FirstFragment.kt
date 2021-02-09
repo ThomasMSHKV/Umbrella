@@ -63,7 +63,7 @@ class FirstFragment : Fragment(), CoroutineScope {
 
             })
 
-            info_bt.setOnClickListener {
+            info_button.setOnClickListener {
                 infoFragment.arguments = Bundle().also {
                     it.putInt("key", 1)
                 }
@@ -91,7 +91,7 @@ class FirstFragment : Fragment(), CoroutineScope {
 
 
     fun viewFlipper() {
-        val viewflipper = vFlipper
+        val viewflipper = view_Flipper
         viewflipper.isAutoStart
         viewflipper.flipInterval = 2000
 //        shodaTime = ShodaTime.WINTER
@@ -100,7 +100,13 @@ class FirstFragment : Fragment(), CoroutineScope {
 //        shodaTime?.images()?.get(2)?.let { viewflipper.imageThree.setImageResource(it) }
 //        shodaTime?.images()?.get(3)?.let { viewflipper.imageFour.setImageResource(it) }
 //
-        shodaTime = ShodaTime.SUMMER
+//        shodaTime = ShodaTime.SUMMER
+//        shodaTime?.images()?.get(0)?.let { viewflipper.imageOne.setImageResource(it) }
+//        shodaTime?.images()?.get(1)?.let { viewflipper.imageTwo.setImageResource(it) }
+//        shodaTime?.images()?.get(2)?.let { viewflipper.imageThree.setImageResource(it) }
+//        shodaTime?.images()?.get(3)?.let { viewflipper.imageFour.setImageResource(it) }
+
+        shodaTime = ShodaTime.SPRING
         shodaTime?.images()?.get(0)?.let { viewflipper.imageOne.setImageResource(it) }
         shodaTime?.images()?.get(1)?.let { viewflipper.imageTwo.setImageResource(it) }
         shodaTime?.images()?.get(2)?.let { viewflipper.imageThree.setImageResource(it) }

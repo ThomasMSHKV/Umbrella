@@ -1,0 +1,20 @@
+Index: app/src/main/res/values/strings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><resources>\r\n    <string name=\"app_name\">Umbrella</string>\r\n    <string name=\"hello_blank_fragment\">Hello blank fragment</string>\r\n    <string name=\"Username\">Username</string>\r\n    <string name=\"last_name\">Last name</string>\r\n    <string name=\"umbrella\">Umbrella</string>\r\n    <string name=\"temp\">29°C</string>\r\n    <string name=\"name\">City</string>\r\n    <string name=\"description\">Clear sky</string>\r\n    <string name=\"max_temp\">5.6°C</string>\r\n    <string name=\"min_temp\">-5.4°C</string>\r\n    <string name=\"wind\">06:40 AM</string>\r\n    <string name=\"pressure\">06:40 AM</string>\r\n    <string name=\"humidity\">06:40 AM</string>\r\n\r\n\r\n    <string name=\"text_description\">Сегодня -5, это двольно холодно. Наденьте Пуховик, шапку, шарф если есть возможность и подштаники, что бы чувствоввать себя комфортно ваша утепленность должна составить минимум 75%</string>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/strings.xml	(revision 0aafa6cadd3df8d45e37fb3e0ea4d6d04e46dc1a)
++++ app/src/main/res/values/strings.xml	(date 1612870473030)
+@@ -15,4 +15,9 @@
+ 
+ 
+     <string name="text_description">Сегодня -5, это двольно холодно. Наденьте Пуховик, шапку, шарф если есть возможность и подштаники, что бы чувствоввать себя комфортно ваша утепленность должна составить минимум 75%</string>
++    <string name="info_about_app">Наше приложение создана для облегчения людям задачу с выброром одежды на опреденную погоды Введите в поисковик нужный вам город и получите всю информацию о погоде, а так же как под него одеться.</string>
++    <string name="AboutApp">О приложении</string>
++    <string name="version_text">Версия программы: 1.0</string>
++    <string name="developers">Разработчики: <b><i>«Flame technologies»</i></b></string>
++
+ </resources>
+\ No newline at end of file

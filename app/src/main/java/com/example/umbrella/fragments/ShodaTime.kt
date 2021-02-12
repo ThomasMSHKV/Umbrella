@@ -10,15 +10,6 @@ enum class ShodaTime {
 
 
 
-    fun Name(): String {
-        when(this) {
-            WINTER -> return "ЗИМА"
-            SPRING -> return "ВЕСНА"
-            SUMMER -> return "ЛЕТО"
-            FALL ->  return  "ОСЕНЬ"
-        }
-    }
-
     fun images(): List<Int> {
         when(this) {
             WINTER -> return listOf(R.drawable.winter1,R.drawable.winter2,R.drawable.winter3, R.drawable.winter4)
@@ -27,6 +18,5 @@ enum class ShodaTime {
             FALL ->  return  listOf(R.drawable.fall1,R.drawable.fall2,R.drawable.fall3,R.drawable.fall4)
         }
     }
-
 
 }

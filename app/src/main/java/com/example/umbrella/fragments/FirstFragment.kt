@@ -12,16 +12,20 @@ import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_first.*
 import kotlinx.android.synthetic.main.fragment_first.view.*
 import kotlinx.coroutines.*
+import okhttp3.internal.notify
 
 
 class FirstFragment : Fragment(), CoroutineScope {
     override val coroutineContext = Dispatchers.Main
     val repository = WeatherRepository()
     var shodaTime: ShodaTime? = null
+    var condition = 0
+    val viewflipper = view_Flipper
+
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+            inflater: LayoutInflater, container: ViewGroup?,
+            savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_first, container, false)
 
@@ -29,10 +33,13 @@ class FirstFragment : Fragment(), CoroutineScope {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        Log.d("FIRST", "BEGINING")
         val infoFragment = InfoFragment()
         val bottomsheetFragment = BottomSheet_Fragment()
         getWeather()
+        getImageTempSpring()
         viewFlipper()
+
 
 
 
@@ -40,7 +47,7 @@ class FirstFragment : Fragment(), CoroutineScope {
             withContext(Dispatchers.Main) {
                 loader.visibility = View.GONE
                 firstScreen.visibility = View.VISIBLE
-
+                Log.d("FIRST", "6")
             }
 
 
@@ -52,10 +59,11 @@ class FirstFragment : Fragment(), CoroutineScope {
                         MotionEvent.ACTION_DOWN ->
 
                             bottomsheetFragment.show(
-                                requireActivity().supportFragmentManager,
-                                "BottomSheetFragment"
+                                    requireActivity().supportFragmentManager,
+                                    "BottomSheetFragment"
                             )
                     }
+                    Log.d("FIRST", "7")
                     return v?.onTouchEvent(event) ?: true
                 }
 
@@ -67,9 +75,9 @@ class FirstFragment : Fragment(), CoroutineScope {
                     it.putInt("key", 1)
                 }
                 fragmentManager?.beginTransaction()
-                    ?.replace(R.id.fragmentContainer, infoFragment)
-                    ?.addToBackStack(null)
-                    ?.commit()
+                        ?.replace(R.id.fragmentContainer, infoFragment)
+                        ?.addToBackStack(null)
+                        ?.commit()
 
             }
         }
@@ -86,40 +94,36 @@ class FirstFragment : Fragment(), CoroutineScope {
         pressure.text = data.main.pressure.toString()
         wind.text = data.wind.speed.toString()
 
-    }
 
-
-
-
-    fun viewFlipper() {
-        val viewflipper = view_Flipper
-        viewflipper.isAutoStart
-        viewflipper.flipInterval = 3500
-
-        shodaTime = ShodaTime.WINTER
+        condition = data.main.feels_like.toInt()
+        shodaTime = chooserWeather(data.main.feels_like.toInt())
         shodaTime?.images()?.get(0)?.let { viewflipper.imageOne.setImageResource(it) }
         shodaTime?.images()?.get(1)?.let { viewflipper.imageTwo.setImageResource(it) }
         shodaTime?.images()?.get(2)?.let { viewflipper.imageThree.setImageResource(it) }
         shodaTime?.images()?.get(3)?.let { viewflipper.imageFour.setImageResource(it) }
 
-//        shodaTime = ShodaTime.SUMMER
-//        shodaTime?.images()?.get(0)?.let { viewflipper.imageOne.setImageResource(it) }
-//        shodaTime?.images()?.get(1)?.let { viewflipper.imageTwo.setImageResource(it) }
-//        shodaTime?.images()?.get(2)?.let { viewflipper.imageThree.setImageResource(it) }
-//        shodaTime?.images()?.get(3)?.let { viewflipper.imageFour.setImageResource(it) }
+    }
 
-//        shodaTime = ShodaTime.SPRING
-//        shodaTime?.images()?.get(0)?.let { viewflipper.imageOne.setImageResource(it) }
-//        shodaTime?.images()?.get(1)?.let { viewflipper.imageTwo.setImageResource(it) }
-//        shodaTime?.images()?.get(2)?.let { viewflipper.imageThree.setImageResource(it) }
-//        shodaTime?.images()?.get(3)?.let { viewflipper.imageFour.setImageResource(it) }
+    private fun chooserWeather(n: Int): ShodaTime {
 
-//        shodaTime = ShodaTime.FALL
-//        shodaTime?.images()?.get(0)?.let { viewflipper.imageOne.setImageResource(it) }
-//        shodaTime?.images()?.get(1)?.let { viewflipper.imageTwo.setImageResource(it) }
-//        shodaTime?.images()?.get(2)?.let { viewflipper.imageThree.setImageResource(it) }
-//        shodaTime?.images()?.get(3)?.let { viewflipper.imageFour.setImageResource(it) }
+        when (n) {
+            in 0..-5 -> return ShodaTime.FALL
+            in -6..-40 -> return ShodaTime.WINTER
+            in 0..10 -> return ShodaTime.SPRING
+            in 11..70 -> return ShodaTime.SUMMER
+        }
+        return ShodaTime.SUMMER
 
+    }
+
+    private fun getImageTempSpring() {
+    }
+
+
+    fun viewFlipper() {
+
+        viewflipper.isAutoStart
+        viewflipper.flipInterval = 3500
 
 
     }

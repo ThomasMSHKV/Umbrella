@@ -429,24 +429,23 @@
         <ImageView
             android:id="@+id/imageOne"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"/>
 
         <ImageView
             android:id="@+id/imageTwo"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"/>
 
         <ImageView
             android:id="@+id/imageThree"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"/>
 
         <ImageView
             android:id="@+id/imageFour"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="match_parent"/>
 
-            />
 
     </ViewFlipper>
 

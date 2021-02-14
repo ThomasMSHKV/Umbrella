@@ -1,0 +1,66 @@
+Index: app/src/main/java/com/example/umbrella/fragments/FirstFragment.kt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package com.example.umbrella.fragments\r\n\r\nimport android.os.Bundle\r\nimport android.util.Log\r\nimport android.view.*\r\nimport androidx.fragment.app.Fragment\r\nimport com.example.umbrella.R\r\nimport com.example.umbrella.data.WeatherData\r\nimport com.example.umbrella.data.WeatherRepository\r\nimport com.google.android.material.bottomsheet.BottomSheetBehavior\r\nimport kotlinx.android.synthetic.main.activity_main.*\r\nimport kotlinx.android.synthetic.main.fragment_first.*\r\nimport kotlinx.android.synthetic.main.fragment_first.view.*\r\nimport kotlinx.coroutines.*\r\nimport okhttp3.internal.notify\r\n\r\n\r\nclass FirstFragment : Fragment(), CoroutineScope {\r\n    override val coroutineContext = Dispatchers.Main\r\n    val repository = WeatherRepository()\r\n    var shodaTime: ShodaTime? = null\r\n    var condition = 0\r\n    val viewflipper = view_Flipper\r\n\r\n\r\n    override fun onCreateView(\r\n            inflater: LayoutInflater, container: ViewGroup?,\r\n            savedInstanceState: Bundle?\r\n    ): View? {\r\n        return inflater.inflate(R.layout.fragment_first, container, false)\r\n\r\n    }\r\n\r\n\r\n    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {\r\n        Log.d(\"FIRST\", \"BEGINING\")\r\n        val infoFragment = InfoFragment()\r\n        val bottomsheetFragment = BottomSheet_Fragment()\r\n        getWeather()\r\n        getImageTempSpring()\r\n        viewFlipper()\r\n\r\n\r\n\r\n\r\n        launch {\r\n            withContext(Dispatchers.Main) {\r\n                loader.visibility = View.GONE\r\n                firstScreen.visibility = View.VISIBLE\r\n                Log.d(\"FIRST\", \"6\")\r\n            }\r\n\r\n\r\n            BottomSheetBehavior.STATE_COLLAPSED\r\n            sheet_btn.visibility = View.VISIBLE\r\n            sheet_btn.setOnTouchListener(object : View.OnTouchListener {\r\n                override fun onTouch(v: View?, event: MotionEvent?): Boolean {\r\n                    when (event?.action) {\r\n                        MotionEvent.ACTION_DOWN ->\r\n\r\n                            bottomsheetFragment.show(\r\n                                    requireActivity().supportFragmentManager,\r\n                                    \"BottomSheetFragment\"\r\n                            )\r\n                    }\r\n                    Log.d(\"FIRST\", \"7\")\r\n                    return v?.onTouchEvent(event) ?: true\r\n                }\r\n\r\n\r\n            })\r\n\r\n            info_button.setOnClickListener {\r\n                infoFragment.arguments = Bundle().also {\r\n                    it.putInt(\"key\", 1)\r\n                }\r\n                fragmentManager?.beginTransaction()\r\n                        ?.replace(R.id.fragmentContainer, infoFragment)\r\n                        ?.addToBackStack(null)\r\n                        ?.commit()\r\n\r\n            }\r\n        }\r\n    }\r\n\r\n    fun formatData(data: WeatherData) {\r\n        Log.d(\"LOG_TAG\", \"data.toString()\")\r\n        description.text = data.weather[0].description\r\n        temp.text = data.main.temp.toString() + \" °C\"\r\n        tempMax.text = data.main.temp_max.toString() + \" °C\"\r\n        tempMin.text = data.main.temp_min.toString() + \" °C\"\r\n        humidity.text = data.main.humidity.toString()\r\n        feels_like.text = data.main.feels_like.toString() + \" °C\"\r\n        pressure.text = data.main.pressure.toString()\r\n        wind.text = data.wind.speed.toString()\r\n\r\n\r\n        condition = data.main.feels_like.toInt()\r\n        shodaTime = chooserWeather(data.main.feels_like.toInt())\r\n        shodaTime?.images()?.get(0)?.let { viewflipper.imageOne.setImageResource(it) }\r\n        shodaTime?.images()?.get(1)?.let { viewflipper.imageTwo.setImageResource(it) }\r\n        shodaTime?.images()?.get(2)?.let { viewflipper.imageThree.setImageResource(it) }\r\n        shodaTime?.images()?.get(3)?.let { viewflipper.imageFour.setImageResource(it) }\r\n\r\n    }\r\n\r\n    private fun chooserWeather(n: Int): ShodaTime {\r\n\r\n        when (n) {\r\n            in 0..-5 -> return ShodaTime.FALL\r\n            in -6..-40 -> return ShodaTime.WINTER\r\n            in 0..10 -> return ShodaTime.SPRING\r\n            in 11..70 -> return ShodaTime.SUMMER\r\n        }\r\n        return ShodaTime.SUMMER\r\n\r\n    }\r\n\r\n    private fun getImageTempSpring() {\r\n    }\r\n\r\n\r\n    fun viewFlipper() {\r\n\r\n        viewflipper.isAutoStart\r\n        viewflipper.flipInterval = 3500\r\n\r\n\r\n    }\r\n\r\n\r\n    fun getWeather() {\r\n        btnCity.setOnClickListener {\r\n            GlobalScope.launch(Dispatchers.IO) {\r\n                val getInfoWeather = repository.getData(searchCity.text.toString()).await()\r\n\r\n                withContext(Dispatchers.Main) {\r\n                    if (getInfoWeather != null) {\r\n                        formatData(getInfoWeather)\r\n                    }\r\n                }\r\n            }\r\n        }\r\n    }\r\n}\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/java/com/example/umbrella/fragments/FirstFragment.kt	(revision 7087bf82f4faee1a3c7ac32cb92377b17f6173b6)
++++ app/src/main/java/com/example/umbrella/fragments/FirstFragment.kt	(date 1613134454504)
+@@ -1,5 +1,6 @@
+ package com.example.umbrella.fragments
+ 
++import android.annotation.SuppressLint
+ import android.os.Bundle
+ import android.util.Log
+ import android.view.*
+@@ -83,6 +84,7 @@
+         }
+     }
+ 
++    @SuppressLint("SetTextI18n")
+     fun formatData(data: WeatherData) {
+         Log.d("LOG_TAG", "data.toString()")
+         description.text = data.weather[0].description
+@@ -97,22 +99,20 @@
+ 
+         condition = data.main.feels_like.toInt()
+         shodaTime = chooserWeather(data.main.feels_like.toInt())
+-        shodaTime?.images()?.get(0)?.let { viewflipper.imageOne.setImageResource(it) }
+-        shodaTime?.images()?.get(1)?.let { viewflipper.imageTwo.setImageResource(it) }
+-        shodaTime?.images()?.get(2)?.let { viewflipper.imageThree.setImageResource(it) }
+-        shodaTime?.images()?.get(3)?.let { viewflipper.imageFour.setImageResource(it) }
++
++
+ 
+     }
+ 
+     private fun chooserWeather(n: Int): ShodaTime {
+ 
+         when (n) {
+-            in 0..-5 -> return ShodaTime.FALL
+-            in -6..-40 -> return ShodaTime.WINTER
++            in 0 downTo -5 -> return ShodaTime.FALL
++            in -6 downTo -40 -> return ShodaTime.WINTER
+             in 0..10 -> return ShodaTime.SPRING
+             in 11..70 -> return ShodaTime.SUMMER
+         }
+-        return ShodaTime.SUMMER
++        return ShodaTime.valueOf("")
+ 
+     }
+ 
+@@ -122,8 +122,11 @@
+ 
+     fun viewFlipper() {
+ 
+-        viewflipper.isAutoStart
+-        viewflipper.flipInterval = 3500
++
++        shodaTime?.images()?.get(0)?.let { viewflipper.imageOne.setImageResource(it) }
++        shodaTime?.images()?.get(1)?.let { viewflipper.imageTwo.setImageResource(it) }
++        shodaTime?.images()?.get(2)?.let { viewflipper.imageThree.setImageResource(it) }
++        shodaTime?.images()?.get(3)?.let { viewflipper.imageFour.setImageResource(it) }
+ 
+ 
+     }

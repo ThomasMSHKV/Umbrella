@@ -1,6 +1,6 @@
 package com.example.umbrella.fragments
 
-import android.os.Bundle
+import android.annotation.SuppressLint import android.os.Bundle
 import android.util.Log
 import android.view.*
 import androidx.fragment.app.Fragment
@@ -11,16 +11,20 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_first.*
 import kotlinx.android.synthetic.main.fragment_first.view.*
+import kotlinx.android.synthetic.main.fragment_navigation.*
 import kotlinx.coroutines.*
-import okhttp3.internal.notify
+import kotlin.math.absoluteValue
 
 
+@Suppress("DEPRECATION")
 class FirstFragment : Fragment(), CoroutineScope {
     override val coroutineContext = Dispatchers.Main
     val repository = WeatherRepository()
     var shodaTime: ShodaTime? = null
     var condition = 0
     val viewflipper = view_Flipper
+
+
 
 
     override fun onCreateView(
@@ -33,13 +37,11 @@ class FirstFragment : Fragment(), CoroutineScope {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        Log.d("FIRST", "BEGINING")
         val infoFragment = InfoFragment()
         val bottomsheetFragment = BottomSheet_Fragment()
         getWeather()
-        getImageTempSpring()
         viewFlipper()
-
+        chooserWeather()
 
 
 
@@ -47,7 +49,6 @@ class FirstFragment : Fragment(), CoroutineScope {
             withContext(Dispatchers.Main) {
                 loader.visibility = View.GONE
                 firstScreen.visibility = View.VISIBLE
-                Log.d("FIRST", "6")
             }
 
 
@@ -63,7 +64,6 @@ class FirstFragment : Fragment(), CoroutineScope {
                                     "BottomSheetFragment"
                             )
                     }
-                    Log.d("FIRST", "7")
                     return v?.onTouchEvent(event) ?: true
                 }
 
@@ -83,8 +83,8 @@ class FirstFragment : Fragment(), CoroutineScope {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     fun formatData(data: WeatherData) {
-        Log.d("LOG_TAG", "data.toString()")
         description.text = data.weather[0].description
         temp.text = data.main.temp.toString() + " °C"
         tempMax.text = data.main.temp_max.toString() + " °C"
@@ -95,37 +95,33 @@ class FirstFragment : Fragment(), CoroutineScope {
         wind.text = data.wind.speed.toString()
 
 
+//      shodaTime = chooserWeather(data.main.feels_like.toInt())
         condition = data.main.feels_like.toInt()
-        shodaTime = chooserWeather(data.main.feels_like.toInt())
-        shodaTime?.images()?.get(0)?.let { viewflipper.imageOne.setImageResource(it) }
-        shodaTime?.images()?.get(1)?.let { viewflipper.imageTwo.setImageResource(it) }
-        shodaTime?.images()?.get(2)?.let { viewflipper.imageThree.setImageResource(it) }
-        shodaTime?.images()?.get(3)?.let { viewflipper.imageFour.setImageResource(it) }
 
     }
 
-    private fun chooserWeather(n: Int): ShodaTime {
-
-        when (n) {
-            in 0..-5 -> return ShodaTime.FALL
-            in -6..-40 -> return ShodaTime.WINTER
+    private fun chooserWeather(): ShodaTime {
+        when (condition) {
+            in 0 downTo  -5 -> return ShodaTime.FALL
+            in -6 downTo -40 -> return ShodaTime.WINTER
             in 0..10 -> return ShodaTime.SPRING
             in 11..70 -> return ShodaTime.SUMMER
         }
-        return ShodaTime.SUMMER
 
+        Log.d("MAIN","NOT ERROR1")
+        return ShodaTime.WINTER
     }
 
-    private fun getImageTempSpring() {
-    }
+    fun viewFlipper(): Int {
+        GlobalScope.launch(Dispatchers.Main) {
+            Log.d("MAIN", "NOT ERROR2")
 
-
-    fun viewFlipper() {
-
-        viewflipper.isAutoStart
-        viewflipper.flipInterval = 3500
-
-
+            shodaTime?.images()?.get(0)?.let { viewflipper.imageOne.setImageResource(it) }
+            shodaTime?.images()?.get(1)?.let { viewflipper.imageTwo.setImageResource(it) }
+            shodaTime?.images()?.get(2)?.let { viewflipper.imageThree.setImageResource(it) }
+            shodaTime?.images()?.get(3)?.let { viewflipper.imageFour.setImageResource(it) }
+        }
+        return condition
     }
 
 

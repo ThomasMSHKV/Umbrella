@@ -5,7 +5,7 @@
         <item name="bottomSheetDialogTheme">@style/AppBottomSheetDialogTheme</item>
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorAccent">#FFFFFF</item>
-        <item name="android:statusBarColor">#6E0680</item>
+        <item name="android:statusBarColor">#3D1E4A</item>
 
 
     </style>

@@ -407,9 +407,12 @@
 
     <ViewFlipper
         android:id="@+id/view_Flipper"
-        android:layout_width="350dp"
-        android:layout_height="180dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="460dp"
+        android:padding="100dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginEnd="18dp"
         android:autoStart="true"
         android:background="@drawable/bg_rounded_corner"
         android:flipInterval="3500"
@@ -446,6 +449,10 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
 
+        <ImageView
+            android:id="@+id/imageFive"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
 
     </ViewFlipper>
 

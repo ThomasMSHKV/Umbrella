@@ -3,6 +3,7 @@ package com.example.umbrella.fragments
 import android.annotation.SuppressLint import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.ViewFlipper
 import androidx.fragment.app.Fragment
 import com.example.umbrella.R
 import com.example.umbrella.data.WeatherData
@@ -11,20 +12,16 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_first.*
 import kotlinx.android.synthetic.main.fragment_first.view.*
-import kotlinx.android.synthetic.main.fragment_navigation.*
 import kotlinx.coroutines.*
-import kotlin.math.absoluteValue
 
 
-@Suppress("DEPRECATION")
+
 class FirstFragment : Fragment(), CoroutineScope {
     override val coroutineContext = Dispatchers.Main
     val repository = WeatherRepository()
-    var shodaTime: ShodaTime? = null
+    lateinit var shodaTime: ShodaTime
     var condition = 0
-    val viewflipper = view_Flipper
-
-
+    lateinit var viewflipper: ViewFlipper
 
 
     override fun onCreateView(
@@ -40,17 +37,8 @@ class FirstFragment : Fragment(), CoroutineScope {
         val infoFragment = InfoFragment()
         val bottomsheetFragment = BottomSheet_Fragment()
         getWeather()
-        viewFlipper()
         chooserWeather()
-
-
-
-        launch {
-            withContext(Dispatchers.Main) {
-                loader.visibility = View.GONE
-                firstScreen.visibility = View.VISIBLE
-            }
-
+        viewflipper = requireActivity().findViewById(R.id.view_Flipper)
 
             BottomSheetBehavior.STATE_COLLAPSED
             sheet_btn.visibility = View.VISIBLE
@@ -80,11 +68,11 @@ class FirstFragment : Fragment(), CoroutineScope {
                         ?.commit()
 
             }
-        }
     }
 
+
     @SuppressLint("SetTextI18n")
-    fun formatData(data: WeatherData) {
+     fun formatData(data: WeatherData) {
         description.text = data.weather[0].description
         temp.text = data.main.temp.toString() + " °C"
         tempMax.text = data.main.temp_max.toString() + " °C"
@@ -94,36 +82,42 @@ class FirstFragment : Fragment(), CoroutineScope {
         pressure.text = data.main.pressure.toString()
         wind.text = data.wind.speed.toString()
 
-
-//      shodaTime = chooserWeather(data.main.feels_like.toInt())
         condition = data.main.feels_like.toInt()
+
+        viewFlipper(shodaTime)
 
     }
 
+
     private fun chooserWeather(): ShodaTime {
+        Log.d("MAIN","NOT ERROR1")
         when (condition) {
             in 0 downTo  -5 -> return ShodaTime.FALL
             in -6 downTo -40 -> return ShodaTime.WINTER
-            in 0..10 -> return ShodaTime.SPRING
+            in 1..10 -> return ShodaTime.SPRING
             in 11..70 -> return ShodaTime.SUMMER
         }
-
-        Log.d("MAIN","NOT ERROR1")
         return ShodaTime.WINTER
+
     }
 
-    fun viewFlipper(): Int {
-        GlobalScope.launch(Dispatchers.Main) {
-            Log.d("MAIN", "NOT ERROR2")
+     fun viewFlipper(value: ShodaTime)  {
+        launch(Dispatchers.Main) {
+            Log.d("MAIN", "NOT ERROR3")
 
-            shodaTime?.images()?.get(0)?.let { viewflipper.imageOne.setImageResource(it) }
-            shodaTime?.images()?.get(1)?.let { viewflipper.imageTwo.setImageResource(it) }
-            shodaTime?.images()?.get(2)?.let { viewflipper.imageThree.setImageResource(it) }
-            shodaTime?.images()?.get(3)?.let { viewflipper.imageFour.setImageResource(it) }
+            viewflipper.flipInterval = 2000
+            viewflipper.isAutoStart = true
+            viewflipper.showNext()
+
+
+            value.images().get(0).let { viewflipper.imageOne.setImageResource(it) }
+            value.images().get(1).let { viewflipper.imageTwo.setImageResource(it) }
+            value.images().get(2).let { viewflipper.imageThree.setImageResource(it) }
+            value.images().get(3).let { viewflipper.imageFour.setImageResource(it) }
+
         }
-        return condition
-    }
 
+    }
 
     fun getWeather() {
         btnCity.setOnClickListener {
@@ -139,5 +133,3 @@ class FirstFragment : Fragment(), CoroutineScope {
         }
     }
 }
-
-

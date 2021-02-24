@@ -72,6 +72,7 @@
         tools:ignore="MissingConstraints" />
 
 
+
     <Button
         android:id="@+id/btnCity"
         android:layout_width="17dp"
@@ -86,6 +87,7 @@
         app:layout_constraintStart_toStartOf="@id/searchCity"
         app:layout_constraintTop_toTopOf="@id/searchCity" />
 
+
     <TextView
         android:id="@+id/description"
         android:layout_width="wrap_content"
@@ -99,6 +101,7 @@
         app:layout_constraintTop_toBottomOf="@id/searchCity"
         tools:ignore="MissingConstraints"
         tools:text="@string/description" />
+
 
 
     <LinearLayout
@@ -377,7 +380,6 @@
     </LinearLayout>
 
 
-
     <Button
         android:id="@+id/info_button"
         android:layout_width="35dp"
@@ -393,53 +395,74 @@
         android:text="Рекомендация"
         android:textColor="@color/black"
         android:elevation="1dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginStart="10dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginBottom="195dp"
+        android:layout_marginStart="30dp"
         app:layout_constraintStart_toStartOf="@id/view_Flipper"
-        app:layout_constraintTop_toTopOf="@id/view_Flipper" />
+        app:layout_constraintTop_toTopOf="@id/view_Flipper"
+        app:layout_constraintBottom_toBottomOf="@id/view_Flipper"
+        app:layout_constraintEnd_toEndOf="@id/view_Flipper"/>
 
     <ViewFlipper
         android:id="@+id/view_Flipper"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="480dp"
-        android:layout_marginBottom="40dp"
-        android:padding="100dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginEnd="18dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
         android:autoStart="true"
-        android:flipInterval="2000"
         android:background="@drawable/bg_rounded_corner"
+        android:clickable="true"
+        android:flipInterval="2000"
+        android:focusable="true"
         android:inAnimation="@anim/flipin"
         android:outAnimation="@anim/flipout"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:clickable="true"
-        android:focusableInTouchMode="true"
-        android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.93">
+
 
         <ImageView
             android:id="@+id/imageOne"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="210dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            />
 
         <ImageView
             android:id="@+id/imageTwo"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="210dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="5dp"
+            />
 
         <ImageView
             android:id="@+id/imageThree"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="210dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="5dp"/>
 
         <ImageView
             android:id="@+id/imageFour"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="210dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="5dp"
+
+            android:layout_marginTop="5dp"/>
+
 
     </ViewFlipper>
 

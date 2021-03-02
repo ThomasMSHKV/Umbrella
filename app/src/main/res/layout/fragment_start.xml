@@ -9,7 +9,6 @@
     android:background="@drawable/style_background">
 
 
-
     <TextView
         android:layout_width="270dp"
         android:layout_height="wrap_content"

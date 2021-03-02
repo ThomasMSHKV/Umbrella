@@ -47,7 +47,7 @@
         android:layout_marginTop="55dp"
         android:fontFamily="sans-serif-thin"
         android:textColor="#FFFFFF"
-        android:textSize="55dp"
+        android:textSize="55sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/umbrella_text"
@@ -95,7 +95,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="serif"
         android:textColor="#E8FFFFFF"
-        android:textSize="18dp"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/searchCity"
@@ -151,7 +151,7 @@
                     android:layout_height="wrap_content"
                     android:text="Max Temp"
                     android:textColor="@android:color/white"
-                    android:textSize="12dp" />
+                    android:textSize="12sp" />
 
 
                 <TextView
@@ -193,14 +193,14 @@
                     android:layout_height="wrap_content"
                     android:text="Min Temp"
                     android:textColor="@android:color/white"
-                    android:textSize="12dp" />
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/tempMin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/white"
-                    android:textSize="14dp"
+                    android:textSize="14sp"
                     tools:text="@string/min_temp" />
             </LinearLayout>
 
@@ -232,14 +232,14 @@
                     android:layout_height="wrap_content"
                     android:text="Wind"
                     android:textColor="@android:color/white"
-                    android:textSize="12dp" />
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/wind"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/white"
-                    android:textSize="14dp"
+                    android:textSize="14sp"
                     tools:text="@string/wind" />
 
             </LinearLayout>
@@ -280,14 +280,14 @@
                     android:layout_height="wrap_content"
                     android:text="Pressure"
                     android:textColor="@android:color/white"
-                    android:textSize="12dp" />
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/pressure"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/white"
-                    android:textSize="14dp"
+                    android:textSize="14sp"
                     tools:text="@string/pressure" />
 
             </LinearLayout>
@@ -384,6 +384,8 @@
         android:id="@+id/info_button"
         android:layout_width="35dp"
         android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
         android:background="@drawable/info_bt"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

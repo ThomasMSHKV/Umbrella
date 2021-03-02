@@ -4,14 +4,17 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.*
+import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.ViewFlipper
-import androidx.core.view.get
 import androidx.fragment.app.Fragment
 import com.example.umbrella.R
 import com.example.umbrella.data.WeatherData
 import com.example.umbrella.data.WeatherRepository
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.bottomsheet_fragment.*
+import kotlinx.android.synthetic.main.bottomsheet_fragment.view.*
 import kotlinx.android.synthetic.main.fragment_first.*
 import kotlinx.android.synthetic.main.fragment_first.view.*
 import kotlinx.coroutines.*
@@ -20,22 +23,18 @@ import kotlinx.coroutines.*
 class FirstFragment : Fragment(), CoroutineScope {
     override val coroutineContext = Dispatchers.Main
     val repository = WeatherRepository()
-
-    var shodaTime: ShodaTime? = null
     var condition = 0
     lateinit var viewflipper: ViewFlipper
-
-    val winter = listOf(R.drawable.winter1, R.drawable.winter2, R.drawable.winter3, R.drawable.winter4)
-    val spring = listOf(R.drawable.spring1, R.drawable.spring2, R.drawable.spring3, R.drawable.spring4)
-    val summer = listOf(R.drawable.summer1, R.drawable.summer2, R.drawable.summer3, R.drawable.summer4)
-    val fall = listOf(R.drawable.fall1, R.drawable.fall2, R.drawable.fall3, R.drawable.fall4)
+    private var clotherForWeather: TextView? = null
 
 
     override fun onCreateView(
-            inflater: LayoutInflater, container: ViewGroup?,
-            savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+
     ): View? {
         return inflater.inflate(R.layout.fragment_first, container, false)
+
 
     }
 
@@ -46,6 +45,10 @@ class FirstFragment : Fragment(), CoroutineScope {
         getWeather()
         chooserWeather()
         viewFlipper()
+        chooserDescription()
+        bottomSheetDescription()
+
+        clotherForWeather = requireActivity().findViewById(R.id.clothes_for_weather)
         viewflipper = requireActivity().findViewById(R.id.view_Flipper)
 
         BottomSheetBehavior.STATE_COLLAPSED
@@ -56,8 +59,8 @@ class FirstFragment : Fragment(), CoroutineScope {
                     MotionEvent.ACTION_DOWN ->
 
                         bottomsheetFragment.show(
-                                requireActivity().supportFragmentManager,
-                                "BottomSheetFragment"
+                            requireActivity().supportFragmentManager,
+                            "BottomSheetFragment"
                         )
                 }
                 return v?.onTouchEvent(event) ?: true
@@ -71,9 +74,9 @@ class FirstFragment : Fragment(), CoroutineScope {
                 it.putInt("key", 1)
             }
             fragmentManager?.beginTransaction()
-                    ?.replace(R.id.fragmentContainer, infoFragment)
-                    ?.addToBackStack(null)
-                    ?.commit()
+                ?.replace(R.id.fragmentContainer, infoFragment)
+                ?.addToBackStack(null)
+                ?.commit()
 
         }
 
@@ -92,14 +95,15 @@ class FirstFragment : Fragment(), CoroutineScope {
         wind.text = data.wind.speed.toString()
 
         condition = data.main.feels_like.toInt()
-        viewFlipper()
 
+        viewFlipper()
+        bottomSheetDescription()
 
 
     }
 
 
-     fun chooserWeather(): ShodaTime {
+    fun chooserWeather(): ShodaTime {
         Log.d("MAIN", "NOT ERROR1")
         when (condition) {
             in 0 downTo -5 -> return ShodaTime.FALL
@@ -112,9 +116,9 @@ class FirstFragment : Fragment(), CoroutineScope {
 
     }
 
-    private fun viewFlipper(){
+    private fun viewFlipper() {
         launch(Dispatchers.Main) {
-            Log.d("MAIN", "NOT ERROR3")
+            Log.d("MAIN", "${chooserWeather()}")
 
             viewflipper.startFlipping()
             viewflipper.flipInterval = 2000
@@ -125,34 +129,41 @@ class FirstFragment : Fragment(), CoroutineScope {
             chooserWeather().images().get(3).let { viewflipper.imageFour.setImageResource(it) }
 
 
-//            fall.get(0).let { viewflipper.imageOne.setImageResource(it) }
-//            fall.get(1).let { viewflipper.imageTwo.setImageResource(it) }
-//            fall.get(2).let { viewflipper.imageThree.setImageResource(it) }
-//            fall.get(3).let { viewflipper.imageFour.setImageResource(it) }
-//
-//            spring.get(0).let { viewflipper.imageOne.setImageResource(it) }
-//            spring.get(1).let { viewflipper.imageTwo.setImageResource(it) }
-//            spring.get(2).let { viewflipper.imageThree.setImageResource(it) }
-//            spring.get(3).let { viewflipper.imageFour.setImageResource(it) }
-//
-//            winter.get(0).let { viewflipper.imageOne.setImageResource(it) }
-//            winter.get(1).let { viewflipper.imageTwo.setImageResource(it) }
-//            winter.get(2).let { viewflipper.imageThree.setImageResource(it) }
-//            winter.get(3).let { viewflipper.imageFour.setImageResource(it) }
-//
-//            summer.get(0).let { viewflipper.imageOne.setImageResource(it) }
-//            summer.get(1).let { viewflipper.imageTwo.setImageResource(it) }
-//            summer.get(2).let { viewflipper.imageThree.setImageResource(it) }
-//            summer.get(3).let { viewflipper.imageFour.setImageResource(it) }
+        }
+    }
 
-            shodaTime?.images()?.get(0)?.let { viewflipper.imageOne.setImageResource(it) }
-            shodaTime?.images()?.get(1)?.let { viewflipper.imageTwo.setImageResource(it) }
-            shodaTime?.images()?.get(2)?.let { viewflipper.imageThree.setImageResource(it) }
-            shodaTime?.images()?.get(3)?.let { viewflipper.imageFour.setImageResource(it) }
+    fun chooserDescription(): CharSequence {
+        Log.d("MAIN", "NOT ERROR3")
+        when (condition) {
+            //COLD
+            in 0 downTo -3 -> return getString(R.string.zero_three)
+            in -4 downTo -7 -> return getString(R.string.minus_four_seven)
+            in -8 downTo -18 -> return getString(R.string.minus_eight_eighteen)
+            in -19 downTo -80 -> return getString(R.string.minus_nineteen_eighty)
+            //WORM
+            in 1..3 -> return getString(R.string.plus_one_three)
+            in 4..5 -> return getString(R.string.plus_four_five)
+            in 6..10 -> return getString(R.string.plus_six_ten)
+            in 11..15 -> return getString(R.string.plus_eleven_fifteen)
+            in 16..21 -> return getString(R.string.plus_sixteen_twentyOne)
+            in 22..27 -> return getString(R.string.plus_twentyTwo_twentySeven)
+            in 28..35 -> return getString(R.string.plus_twentyEight_thirtyFive)
+            in 36..60 -> return getString(R.string.plus_thirtySix_sixty)
+
+        }
+        return getString(R.string.zero_three)
+
+    }
+
+    private fun bottomSheetDescription() {
+        Log.d("MAIN_DES", "${chooserDescription()}")
+        launch(Dispatchers.Main) {
+            chooserDescription().let {  clotherForWeather?.text = it  }
 
         }
 
     }
+
 
     fun getWeather() {
         btnCity.setOnClickListener {
@@ -168,4 +179,5 @@ class FirstFragment : Fragment(), CoroutineScope {
         }
     }
 }
+
 

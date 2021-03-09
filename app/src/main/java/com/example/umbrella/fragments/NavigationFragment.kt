@@ -1,8 +1,6 @@
 package com.example.umbrella.fragments
 
 import android.animation.ObjectAnimator
-import android.app.Application
-import android.content.SharedPreferences
 import android.media.MediaPlayer
 import android.os.Bundle
 import android.os.Handler

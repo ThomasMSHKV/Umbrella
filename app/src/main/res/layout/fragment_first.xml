@@ -61,6 +61,7 @@
         android:layout_height="25dp"
         android:background="@drawable/edits"
         android:hint="City"
+        android:inputType="text"
         android:maxLines="1"
         android:paddingStart="10dp"
         android:textColor="#050000"
@@ -149,7 +150,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Max Temp"
+                    android:text="Макс Темп"
                     android:textColor="@android:color/white"
                     android:textSize="12sp" />
 
@@ -159,7 +160,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/white"
-                    android:textSize="14dp"
+                    android:textSize="14sp"
                     tools:text="@string/max_temp" />
 
             </LinearLayout>
@@ -191,7 +192,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Min Temp"
+                    android:text="Мин Темп"
                     android:textColor="@android:color/white"
                     android:textSize="12sp" />
 
@@ -230,7 +231,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Wind"
+                    android:text="Ветер"
                     android:textColor="@android:color/white"
                     android:textSize="12sp" />
 
@@ -278,7 +279,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pressure"
+                    android:text="Давление"
                     android:textColor="@android:color/white"
                     android:textSize="12sp" />
 
@@ -319,16 +320,16 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Humidity"
+                    android:text="Влажность"
                     android:textColor="@android:color/white"
-                    android:textSize="12dp" />
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/humidity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textColor="@android:color/white"
-                    android:textSize="14dp"
+                    android:textSize="14sp"
                     tools:text="@string/humidity" />
 
             </LinearLayout>
@@ -362,9 +363,9 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Feels Like"
+                    android:text="Чувст как"
                     android:textColor="@android:color/white"
-                    android:textSize="14dp" />
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/feels_like"
@@ -397,9 +398,10 @@
         android:text="Рекомендация"
         android:textColor="@color/black"
         android:elevation="1dp"
-        android:layout_marginEnd="250dp"
-        android:layout_marginBottom="195dp"
+        android:layout_marginEnd="230dp"
+        android:layout_marginTop="5dp"
         android:layout_marginStart="30dp"
+        android:layout_marginBottom="195dp"
         app:layout_constraintStart_toStartOf="@id/view_Flipper"
         app:layout_constraintTop_toTopOf="@id/view_Flipper"
         app:layout_constraintBottom_toBottomOf="@id/view_Flipper"

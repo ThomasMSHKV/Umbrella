@@ -36,13 +36,14 @@
         android:fontFamily="serif"
         android:gravity="center"
         android:textAlignment="center"
+        android:padding="10dp"
         android:text="@string/here_will_description"
         android:textColor="@android:color/black"
         android:textSize="20sp" />
 
     <com.makeramen.roundedimageview.RoundedImageView
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="wrap_content"
         android:scaleType="centerCrop"
         android:background="@android:color/white"
         app:riv_corner_radius_top_left="25dp"
@@ -56,7 +57,7 @@
         android:background="@drawable/image_sheet_back"
         android:clickable="true"
         android:focusable="true"
-        android:fontFamily="sans-serif-black"
+        android:fontFamily="serif-monospace"
         android:text="принять"
         android:textColor="@android:color/white" />
 

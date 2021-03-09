@@ -4,17 +4,15 @@ import android.annotation.SuppressLint
 import android.os.Bundle
 import android.util.Log
 import android.view.*
-import android.widget.LinearLayout
-import android.widget.TextView
 import android.widget.ViewFlipper
 import androidx.fragment.app.Fragment
 import com.example.umbrella.R
 import com.example.umbrella.data.WeatherData
 import com.example.umbrella.data.WeatherRepository
 import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.bottomsheet_fragment.*
-import kotlinx.android.synthetic.main.bottomsheet_fragment.view.*
 import kotlinx.android.synthetic.main.fragment_first.*
 import kotlinx.android.synthetic.main.fragment_first.view.*
 import kotlinx.coroutines.*
@@ -25,7 +23,7 @@ class FirstFragment : Fragment(), CoroutineScope {
     val repository = WeatherRepository()
     var condition = 0
     lateinit var viewflipper: ViewFlipper
-    private var clotherForWeather: TextView? = null
+    lateinit var bottomsheetFragment: BottomSheetDialogFragment
 
 
     override fun onCreateView(
@@ -40,16 +38,11 @@ class FirstFragment : Fragment(), CoroutineScope {
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val infoFragment = InfoFragment()
-        val bottomsheetFragment = BottomSheet_Fragment()
         getWeather()
         chooserWeather()
-        viewFlipper()
-        chooserDescription()
-        bottomSheetDescription()
-
-        clotherForWeather = requireActivity().findViewById(R.id.clothes_for_weather)
         viewflipper = requireActivity().findViewById(R.id.view_Flipper)
+        val infoFragment = InfoFragment()
+
 
         BottomSheetBehavior.STATE_COLLAPSED
         sheet_btn.visibility = View.VISIBLE
@@ -78,6 +71,7 @@ class FirstFragment : Fragment(), CoroutineScope {
                 ?.addToBackStack(null)
                 ?.commit()
 
+
         }
 
     }
@@ -92,14 +86,13 @@ class FirstFragment : Fragment(), CoroutineScope {
         humidity.text = data.main.humidity.toString()
         feels_like.text = data.main.feels_like.toString() + " °C"
         pressure.text = data.main.pressure.toString()
-        wind.text = data.wind.speed.toString()
+        wind.text = data.wind.speed.toString() + " м.с"
 
         condition = data.main.feels_like.toInt()
-
+        Log.d("CONDITION", "$condition")
+        Log.d("MAINchoth", chooserDescription())
+        bottomsheetFragment = BottomSheet_Fragment(chooserDescription())
         viewFlipper()
-        bottomSheetDescription()
-
-
     }
 
 
@@ -120,6 +113,7 @@ class FirstFragment : Fragment(), CoroutineScope {
         launch(Dispatchers.Main) {
             Log.d("MAIN", "${chooserWeather()}")
 
+
             viewflipper.startFlipping()
             viewflipper.flipInterval = 2000
             viewflipper.isAutoStart = true
@@ -132,8 +126,8 @@ class FirstFragment : Fragment(), CoroutineScope {
         }
     }
 
-    fun chooserDescription(): CharSequence {
-        Log.d("MAIN", "NOT ERROR3")
+    fun chooserDescription(): String {
+        Log.d("MAIN", "$condition")
         when (condition) {
             //COLD
             in 0 downTo -3 -> return getString(R.string.zero_three)
@@ -150,17 +144,9 @@ class FirstFragment : Fragment(), CoroutineScope {
             in 28..35 -> return getString(R.string.plus_twentyEight_thirtyFive)
             in 36..60 -> return getString(R.string.plus_thirtySix_sixty)
 
+
         }
         return getString(R.string.zero_three)
-
-    }
-
-    private fun bottomSheetDescription() {
-        Log.d("MAIN_DES", "${chooserDescription()}")
-        launch(Dispatchers.Main) {
-            chooserDescription().let {  clotherForWeather?.text = it  }
-
-        }
 
     }
 

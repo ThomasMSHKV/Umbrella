@@ -1,11 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/fragmentContainer"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".MainActivity">
+    tools:context=".ui.MainActivity"
+    android:background="@drawable/style_background"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+
+
+    <Button
+        android:id="@+id/sheet_btn"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:visibility="invisible"
+        tools:visibility="visible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/line_for_sheet24"/>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

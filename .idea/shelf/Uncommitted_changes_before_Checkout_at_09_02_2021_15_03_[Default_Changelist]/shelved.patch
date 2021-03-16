@@ -1,0 +1,138 @@
+Index: app/src/main/res/values/colors.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<resources>\r\n    <color name=\"colorPrimary\">#7A64A6</color>\r\n    <color name=\"colorPrimaryDark\">#FF7700</color>\r\n    <color name=\"colorAccent\">#FFFFFF</color>\r\n    <color name=\"gray\">#ECE9E9</color>\r\n    <color name=\"black\">#050000</color>\r\n</resources>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/values/colors.xml	(revision 0aafa6cadd3df8d45e37fb3e0ea4d6d04e46dc1a)
++++ app/src/main/res/values/colors.xml	(date 1612870409758)
+@@ -3,6 +3,6 @@
+     <color name="colorPrimary">#7A64A6</color>
+     <color name="colorPrimaryDark">#FF7700</color>
+     <color name="colorAccent">#FFFFFF</color>
+-    <color name="gray">#ECE9E9</color>
++    <color name="gray">#C3C3C3</color>
+     <color name="black">#050000</color>
+ </resources>
+\ No newline at end of file
+Index: app/src/main/res/layout/fragment_info.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<androidx.appcompat.widget.LinearLayoutCompat\r\n    xmlns:android=\"http://schemas.android.com/apk/res/android\"\r\n    xmlns:tools=\"http://schemas.android.com/tools\"\r\n    android:orientation=\"vertical\"\r\n    android:layout_width=\"match_parent\"\r\n    android:layout_height=\"match_parent\"\r\n    tools:context=\".fragments.InfoFragment\"\r\n    android:background=\"@drawable/style_background\">\r\n    \r\n\r\n\r\n    <TextView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"Разработчик\"\r\n        android:textSize=\"20dp\"\r\n        android:layout_marginTop=\"200dp\"\r\n        android:textColor=\"@android:color/black\"\r\n        android:textStyle=\"bold\"\r\n        android:layout_marginStart=\"40dp\"\r\n        android:layout_marginEnd=\"40dp\"\r\n        android:gravity=\"center\"/>\r\n\r\n    <TextView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:gravity=\"center\"\r\n        android:textColor=\"#FFFFFF\"\r\n        android:text=\"Flame Technologies\"\r\n        android:textSize=\"18dp\"\r\n        android:fontFamily=\"sans-serif-condensed-light\"/>\r\n\r\n\r\n\r\n    <TextView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:text=\"Свои жалобы и предпочтения вы можете отправить\"\r\n        android:textColor=\"@android:color/black\"\r\n        android:textStyle=\"bold\"\r\n        android:layout_marginTop=\"5dp\"\r\n        android:textSize=\"16dp\"\r\n        android:gravity=\"center\"/>\r\n\r\n\r\n    <TextView\r\n        android:layout_width=\"match_parent\"\r\n        android:layout_height=\"wrap_content\"\r\n        android:gravity=\"center\"\r\n        android:textColor=\"#FFFFFF\"\r\n        android:text=\"tmereshkov@gmail.com\"\r\n        android:textSize=\"18dp\"\r\n        android:fontFamily=\"sans-serif-condensed-light\"/>\r\n\r\n\r\n\r\n</androidx.appcompat.widget.LinearLayoutCompat>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/src/main/res/layout/fragment_info.xml	(revision 0aafa6cadd3df8d45e37fb3e0ea4d6d04e46dc1a)
++++ app/src/main/res/layout/fragment_info.xml	(date 1612870886013)
+@@ -1,5 +1,5 @@
+ <?xml version="1.0" encoding="utf-8"?>
+-<androidx.appcompat.widget.LinearLayoutCompat
++<FrameLayout
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:tools="http://schemas.android.com/tools"
+     android:orientation="vertical"
+@@ -7,52 +7,71 @@
+     android:layout_height="match_parent"
+     tools:context=".fragments.InfoFragment"
+     android:background="@drawable/style_background">
+-    
+ 
+-
+     <TextView
+-        android:layout_width="match_parent"
++        android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+-        android:text="Разработчик"
++        android:text="@string/AboutApp"
+         android:textSize="20dp"
+-        android:layout_marginTop="200dp"
+-        android:textColor="@android:color/black"
++        android:textColor="#FFFFFF"
+         android:textStyle="bold"
+-        android:layout_marginStart="40dp"
+-        android:layout_marginEnd="40dp"
+-        android:gravity="center"/>
++        android:layout_marginTop="20dp"
++        android:layout_marginStart="20dp" />
++
++
++    <ImageView
++        android:layout_width="100dp"
++        android:layout_height="100dp"
++        android:background="@drawable/umbrella_in_logo"
++        android:layout_gravity="center"
++        android:layout_marginBottom="240dp"/>
+ 
+     <TextView
+-        android:layout_width="match_parent"
++        android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+-        android:gravity="center"
+-        android:textColor="#FFFFFF"
+-        android:text="Flame Technologies"
+-        android:textSize="18dp"
+-        android:fontFamily="sans-serif-condensed-light"/>
+-
+-
++        android:layout_gravity="center"
++        android:layout_marginBottom="170dp"
++        android:layout_marginStart="16dp"
++        android:layout_marginEnd="16dp"
++        android:fontFamily="serif"
++        android:textSize="20sp"
++        android:textColor="@android:color/white"
++        android:text="@string/umbrella"/>
+ 
+     <TextView
+-        android:layout_width="match_parent"
++        android:layout_width="wrap_content"
++        android:layout_height="wrap_content"
++        android:layout_gravity="center"
++        android:layout_marginBottom="60dp"
++        android:layout_marginStart="16dp"
++        android:layout_marginEnd="16dp"
++        android:textAlignment="center"
++        android:textSize="16sp"
++        android:textColor="@android:color/white"
++        android:text="@string/info_about_app"/>
++
++    <TextView
++        android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+-        android:text="Свои жалобы и предпочтения вы можете отправить"
+-        android:textColor="@android:color/black"
+-        android:textStyle="bold"
+-        android:layout_marginTop="5dp"
+-        android:textSize="16dp"
+-        android:gravity="center"/>
++        android:text="@string/version_text"
++        android:layout_gravity="center"
++        android:layout_marginTop="50dp"
++        android:textSize="15sp"
++        android:textColor="@color/gray"/>
+ 
+ 
+     <TextView
+-        android:layout_width="match_parent"
++        android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+-        android:gravity="center"
+-        android:textColor="#FFFFFF"
+-        android:text="tmereshkov@gmail.com"
+-        android:textSize="18dp"
+-        android:fontFamily="sans-serif-condensed-light"/>
++        android:text="@string/developers"
++        android:layout_gravity="center"
++        android:layout_marginTop="100dp"
++        android:textSize="15sp"
++        android:textColor="@android:color/white"
++        />
++
+ 
+ 
+ 
+-</androidx.appcompat.widget.LinearLayoutCompat>
+\ No newline at end of file
++</FrameLayout>
++

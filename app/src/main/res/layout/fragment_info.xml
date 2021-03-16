@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.InfoFragment"
+    android:background="@drawable/style_background">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/about_app"
+        android:textSize="20dp"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:layout_marginStart="20dp"
+        android:gravity="center"/>
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:background="@drawable/umbrella_in_logo"
+        android:layout_gravity="center"
+        android:layout_marginBottom="250dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/umbrella"
+        android:textSize="20sp"
+        android:fontFamily="serif"
+        android:layout_marginBottom="170dp"
+        android:textColor="@android:color/white"
+        android:textStyle="bold"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="80dp"
+        android:text="@string/info_about_app"
+        android:fontFamily="serif"
+        android:textAlignment="center"
+        android:textSize="15sp"
+        android:textColor="@android:color/white"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/version_text"
+        android:textStyle="italic"
+        android:textColor="@color/gray"
+        android:layout_gravity="center"
+        android:textSize="15sp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/developers"
+        android:fontFamily="serif"
+        android:layout_gravity="center"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="50dp"
+        />
+
+
+
+
+</FrameLayout>

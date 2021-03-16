@@ -1,12 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/firstScreen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background_w"
-    tools:context=".FirstFragment">
+    android:background="@drawable/style_background"
+    tools:context=".fragments.FirstFragment">
+
+    <include
+        android:id="@+id/include"
+        layout="@layout/activity_main"
+        tools:layout_editor_absoluteX="-392dp"
+        tools:layout_editor_absoluteY="160dp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="20dp"
+        android:padding="40dp"
+        android:src="@drawable/phon_for_temp"
+        app:layout_constraintBottom_toBottomOf="@+id/description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/umbrella_text"
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/umbrella_text"
@@ -14,43 +33,84 @@
         android:layout_height="wrap_content"
         android:fontFamily="serif"
         android:text="Umbrella"
-        android:textColor="#FF0000"
+        android:textColor="#FFFFFF"
         android:textSize="50sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/temp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="55dp"
         android:fontFamily="sans-serif-thin"
-        android:text="29°C"
-        android:textColor="@android:color/white"
-        android:textSize="55dp"
+        android:textColor="#FFFFFF"
+        android:textSize="55sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/umbrella_text"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        tools:text="@string/temp" />
 
-    <TextView
-        android:id="@+id/address"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Moscow. RU"
-        android:textColor="@android:color/white"
-        android:textSize="24dp"
+
+    <EditText
+        android:id="@+id/searchCity"
+        android:layout_width="150dp"
+        android:layout_height="25dp"
+        android:background="@drawable/edits"
+        android:hint="City"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingStart="10dp"
+        android:textColor="#050000"
+        android:textColorHint="@android:color/darker_gray"
+        android:textSize="15sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/temp"
         tools:ignore="MissingConstraints" />
+
+
+
+    <Button
+        android:id="@+id/btnCity"
+        android:layout_width="17dp"
+        android:layout_height="17dp"
+        android:layout_marginStart="110dp"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/search_im_24"
+        android:clickable="true"
+        android:focusable="true"
+        app:layout_constraintBottom_toBottomOf="@id/searchCity"
+        app:layout_constraintEnd_toEndOf="@id/searchCity"
+        app:layout_constraintStart_toStartOf="@id/searchCity"
+        app:layout_constraintTop_toTopOf="@id/searchCity" />
+
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="serif"
+        android:textColor="#E8FFFFFF"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchCity"
+        tools:ignore="MissingConstraints"
+        tools:text="@string/description" />
+
+
 
     <LinearLayout
         android:id="@+id/detailsContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
+        android:layout_marginTop="10dp"
         android:orientation="vertical"
         android:padding="6dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -69,15 +129,17 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/info_bacground"
+                android:background="@drawable/design_background"
+                android:elevation="10dp"
                 android:gravity="center"
+
                 android:orientation="vertical"
                 android:padding="8dp">
 
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:src="@drawable/sunrise"
+                    android:src="@drawable/tempmax"
                     app:tint="#FFFFFF" />
 
 
@@ -88,18 +150,18 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sunrise"
+                    android:text="Макс Темп"
                     android:textColor="@android:color/white"
-                    android:textSize="12dp" />
+                    android:textSize="12sp" />
 
 
                 <TextView
-                    android:id="@+id/sunrise"
+                    android:id="@+id/tempMax"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="06:40 AM"
                     android:textColor="@android:color/white"
-                    android:textSize="14dp" />
+                    android:textSize="14sp"
+                    tools:text="@string/max_temp" />
 
             </LinearLayout>
 
@@ -112,7 +174,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/info_bacground"
+                android:background="@drawable/design_background"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -120,7 +182,7 @@
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:src="@drawable/sunset"
+                    android:src="@drawable/tempmin"
                     app:tint="#FFFFFF" />
 
                 <Space
@@ -130,18 +192,17 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Sunset"
+                    android:text="Мин Темп"
                     android:textColor="@android:color/white"
-                    android:textSize="12dp" />
+                    android:textSize="12sp" />
 
                 <TextView
-                    android:id="@+id/sunset"
+                    android:id="@+id/tempMin"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="06:40 AM"
                     android:textColor="@android:color/white"
-                    android:textSize="14dp" />
-
+                    android:textSize="14sp"
+                    tools:text="@string/min_temp" />
             </LinearLayout>
 
             <Space
@@ -152,7 +213,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/info_bacground"
+                android:background="@drawable/design_background"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -170,17 +231,17 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Wind"
+                    android:text="Ветер"
                     android:textColor="@android:color/white"
-                    android:textSize="12dp" />
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/wind"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="06:40 AM"
                     android:textColor="@android:color/white"
-                    android:textSize="14dp" />
+                    android:textSize="14sp"
+                    tools:text="@string/wind" />
 
             </LinearLayout>
         </LinearLayout>
@@ -190,6 +251,7 @@
             android:layout_height="10dp" />
 
         <LinearLayout
+            android:id="@+id/linearBottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -199,7 +261,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/info_bacground"
+                android:background="@drawable/design_background"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -217,17 +279,17 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Pressure"
+                    android:text="Давление"
                     android:textColor="@android:color/white"
-                    android:textSize="12dp" />
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/pressure"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="06:40 AM"
                     android:textColor="@android:color/white"
-                    android:textSize="14dp" />
+                    android:textSize="14sp"
+                    tools:text="@string/pressure" />
 
             </LinearLayout>
 
@@ -236,10 +298,11 @@
                 android:layout_height="wrap_content" />
 
             <LinearLayout
+                android:id="@+id/topLinear"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/info_bacground"
+                android:background="@drawable/design_background"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -257,17 +320,17 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Humidity"
+                    android:text="Влажность"
                     android:textColor="@android:color/white"
-                    android:textSize="12dp" />
+                    android:textSize="12sp" />
 
                 <TextView
                     android:id="@+id/humidity"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="06:40 AM"
                     android:textColor="@android:color/white"
-                    android:textSize="14dp" />
+                    android:textSize="14sp"
+                    tools:text="@string/humidity" />
 
             </LinearLayout>
 
@@ -276,10 +339,13 @@
                 android:layout_height="wrap_content" />
 
             <LinearLayout
+                android:id="@+id/umbrella_map"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@drawable/info_bacground"
+                android:background="@drawable/design_background"
+                android:clickable="true"
+                android:focusable="true"
                 android:gravity="center"
                 android:orientation="vertical"
                 android:padding="8dp">
@@ -287,7 +353,7 @@
                 <ImageView
                     android:layout_width="25dp"
                     android:layout_height="25dp"
-                    android:src="@drawable/info"
+                    android:src="@drawable/umbrella_black"
                     app:tint="#FFFFFF" />
 
                 <Space
@@ -297,22 +363,112 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Created By"
+                    android:text="Чувст как"
                     android:textColor="@android:color/white"
-                    android:textSize="12dp" />
+                    android:textSize="12sp" />
 
                 <TextView
-                    android:id="@+id/about"
+                    android:id="@+id/feels_like"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="AndroDocs"
                     android:textColor="@android:color/white"
-                    android:textSize="14dp" />
+                    android:textSize="12dp"
+                    tools:text="-2.4°C" />
             </LinearLayout>
 
         </LinearLayout>
 
     </LinearLayout>
+
+
+    <Button
+        android:id="@+id/info_button"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/info_bt"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Рекомендация"
+        android:textColor="@color/black"
+        android:elevation="1dp"
+        android:layout_marginEnd="230dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginBottom="195dp"
+        app:layout_constraintStart_toStartOf="@id/view_Flipper"
+        app:layout_constraintTop_toTopOf="@id/view_Flipper"
+        app:layout_constraintBottom_toBottomOf="@id/view_Flipper"
+        app:layout_constraintEnd_toEndOf="@id/view_Flipper"/>
+
+    <ViewFlipper
+        android:id="@+id/view_Flipper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="16dp"
+        android:autoStart="true"
+        android:background="@drawable/bg_rounded_corner"
+        android:clickable="true"
+        android:flipInterval="2000"
+        android:focusable="true"
+        android:inAnimation="@anim/flipin"
+        android:outAnimation="@anim/flipout"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.93">
+
+
+        <ImageView
+            android:id="@+id/imageOne"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            />
+
+        <ImageView
+            android:id="@+id/imageTwo"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="5dp"
+            />
+
+        <ImageView
+            android:id="@+id/imageThree"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginEnd="5dp"/>
+
+        <ImageView
+            android:id="@+id/imageFour"
+            android:layout_width="match_parent"
+            android:layout_height="210dp"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="5dp"
+
+            android:layout_marginTop="5dp"/>
+
+
+    </ViewFlipper>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

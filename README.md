@@ -8,7 +8,7 @@
 Так же в проекте присутсвует база данных SharedPreference.
 
 
-# ссылка на приложение в google play 
+# Cсылка на приложение в google play 
 ## https://play.google.com/store/apps/details?id=com.oleg.umbrella
 
 Использовались технологии

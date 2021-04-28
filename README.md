@@ -1,11 +1,17 @@
 # Umbrella
 
 <img src = "https://user-images.githubusercontent.com/65255152/116113907-98f4a180-a6c1-11eb-9f22-4a3436908fca.png" width = "200"/>
-
+### RU
 Наше приложение создано для облегчения людям задачи с выбором одежды на определенную погоду.
 Введите в поисковик нужный вам российский город и получите всю информацию о погоде, а так же как под нее одеться 
 В виде перелистывающих картинок в ViewFlipper'e  и  текста в BottomSheet'e.
 Так же в проекте присутсвует база данных SharedPreference.
+
+### EN
+Our application is to make it easier for people to choose clothes for a certain weather. 
+Enter the Russian city you need in the search engine and get information about it. 
+Dress In the form of flipping pictures in the ViewFlipper and text in the BottomSheet.
+The project also has a SharedPreference database.
 
 
 # Cсылка на приложение в google play 

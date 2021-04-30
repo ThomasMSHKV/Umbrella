@@ -18,7 +18,8 @@ The project also has a SharedPreference database.
 # Cсылка на приложение в google play 
 ## https://play.google.com/store/apps/details?id=com.oleg.umbrella
 
-Использовались технологии
+Использовались технологии:
+Technologies used:
 > * Coroutines - https://kotlinlang.org/docs/coroutines-overview.html
 > * OkHttp - https://square.github.io/okhttp/
 > * Retrofit2 - https://square.github.io/retrofit/
